@@ -33,7 +33,7 @@ Output: [4,9,9,49,121]
 
 **<span style="display: inline;">Note:</span>**
 
-1.  `<span style="display: inline;">1 <= A.length <= 10000</span>`
+1.  `1 <= A.length <= 10000`
 2.  `-10000 <= A[i] <= 10000`
 3.  `A` is sorted in non-decreasing order.
 
