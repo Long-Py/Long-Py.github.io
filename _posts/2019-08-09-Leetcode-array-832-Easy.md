@@ -62,7 +62,7 @@ class Solution(object):
 - **nest** list comprehension
 - bit manipulation:
   
-| X | Y | & | | | ^ | ~X  |
+| X | Y | & | \| | ^ | ~X  |
 |---|---|---|---|---|-----|
 | 0 | 0 | 0 | 0 | 0 |  1  |
 | 0 | 1 | 0 | 1 | 1 |  1  |
