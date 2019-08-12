@@ -6,7 +6,7 @@ date: 2019-08-09
 categories: Leetcode
 tags: Leetcode Array
 ---
-### [561\. Array Partition ICopy for MarkdownCopy for Markdown](https://leetcode.com/problems/array-partition-i/)
+### [561\. Array Partition I](https://leetcode.com/problems/array-partition-i/)
 
 Difficulty: **Easy**
 

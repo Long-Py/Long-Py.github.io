@@ -6,7 +6,7 @@ date: 2019-08-09
 categories: Leetcode
 tags: Leetcode Array
 ---
-### [977\. Squares of a Sorted ArrayCopy for MarkdownCopy for Markdown](https://leetcode.com/problems/squares-of-a-sorted-array/)
+### [977\. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
 
 Difficulty: **Easy**
 

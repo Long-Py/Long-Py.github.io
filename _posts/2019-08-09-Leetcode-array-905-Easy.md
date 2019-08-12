@@ -7,7 +7,7 @@ categories: Leetcode
 tags: Leetcode Array
 ---
 
-### [905\. Sort Array By ParityCopy for MarkdownCopy for MarkdownCopy for MarkdownCopy for MarkdownCopy for Markdown](https://leetcode.com/problems/sort-array-by-parity/)
+### [905\. Sort Array By Parity](https://leetcode.com/problems/sort-array-by-parity/)
 
 Difficulty: **Easy**
 

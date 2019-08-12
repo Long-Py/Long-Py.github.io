@@ -6,7 +6,7 @@ date: 2019-08-09
 categories: Leetcode
 tags: Leetcode Strings
 ---
-### [804\. Unique Morse Code WordsCopy for Markdown](https://leetcode.com/problems/unique-morse-code-words/)
+### [804\. Unique Morse Code Words](https://leetcode.com/problems/unique-morse-code-words/)
 
 Difficulty: **Easy**
 
