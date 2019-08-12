@@ -6,7 +6,7 @@ date: 2019-08-12
 categories: Leetcode
 tags: Leetcode Array
 ---
-### [1122\. Relative Sort ArrayCopy for MarkdownCopy for Markdown](https://leetcode.com/problems/relative-sort-array/)
+### [1122\. Relative Sort Array](https://leetcode.com/problems/relative-sort-array/)
 
 Difficulty: **Easy**
 

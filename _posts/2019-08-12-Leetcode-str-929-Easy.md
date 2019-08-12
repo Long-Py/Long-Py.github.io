@@ -6,7 +6,7 @@ date: 2019-08-12
 categories: Leetcode
 tags: Leetcode Strings
 ---
-### [929\. Unique Email AddressesCopy for MarkdownCopy for Markdown](https://leetcode.com/problems/unique-email-addresses/)
+### [929\. Unique Email Addresses](https://leetcode.com/problems/unique-email-addresses/)
 
 Difficulty: **Easy**
 

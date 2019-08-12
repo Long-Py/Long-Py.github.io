@@ -6,7 +6,7 @@ date: 2019-08-12
 categories: Leetcode
 tags: Leetcode Array
 ---
-### [1051\. Height CheckerCopy for MarkdownCopy for Markdown](https://leetcode.com/problems/height-checker/)
+### [1051\. Height Checker](https://leetcode.com/problems/height-checker/)
 
 Difficulty: **Easy**
 

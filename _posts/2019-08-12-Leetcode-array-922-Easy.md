@@ -6,7 +6,7 @@ date: 2019-08-12
 categories: Leetcode
 tags: Leetcode Array
 ---
-### [922\. Sort Array By Parity IICopy for MarkdownCopy for Markdown](https://leetcode.com/problems/sort-array-by-parity-ii/)
+### [922\. Sort Array By Parity II](https://leetcode.com/problems/sort-array-by-parity-ii/)
 
 Difficulty: **Easy**
 
