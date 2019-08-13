@@ -7,7 +7,7 @@ categories: Leetcode
 tags: Leetcode Array
 ---
 
-### [832\. Flipping an ImageCopy for MarkdownCopy for Markdown](https://leetcode.com/problems/flipping-an-image/)
+### [832\. Flipping an Image](https://leetcode.com/problems/flipping-an-image/)
 
 Difficulty: **Easy**
 
