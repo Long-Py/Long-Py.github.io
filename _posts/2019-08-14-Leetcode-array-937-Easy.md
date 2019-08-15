@@ -59,7 +59,6 @@ class Solution(object):
             else:
                 return(0,rest,id)
         return sorted(logs,key=mySort)
-            else:
 ```
 
 #### Notes
