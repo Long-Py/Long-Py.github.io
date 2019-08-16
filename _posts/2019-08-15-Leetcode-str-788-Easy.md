@@ -52,7 +52,6 @@ class Solution(object):
             if '2' in number or '5' in number or '6' in number or '9' in number:
                 cnt += 1
         return cnt
-            s = str(i)
 ```
 
 #### Notes

@@ -19,7 +19,8 @@ Given an array `nums`, write a function to move all `0`'s to the end of it while
 
 ```
 Input: [0,1,0,3,12]
-Output: [1,3,12,0,0]```
+Output: [1,3,12,0,0]
+```
 
 **Note**:
 
@@ -42,8 +43,7 @@ class Solution(object):
         for i in xrange(len(nums)):
             if nums[i] != 0:
                 nums[i], nums[zero] = nums[zero], nums[i]
-                zero += 1
-                
+                zero += 1 
 ```
 #### Notes
 - track zero index from 0, scan list when element is not 0 swap value then increase zero index by 1.
