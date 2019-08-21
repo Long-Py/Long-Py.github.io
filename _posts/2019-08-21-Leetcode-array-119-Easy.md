@@ -12,7 +12,7 @@ Difficulty: **Easy**
 
 Topics: **Array**
 
-Given a non-negative index _k_ where _k_ ≤ 33, return the _k_<sup>th</sup> index row of the Pascal's triangle.
+Given a non-negative index _k_ where _k_ ≤ 33, return the *k-th* index row of the Pascal's triangle.
 
 Note that the row index starts from 0.
 
@@ -25,7 +25,7 @@ Output: [1,3,3,1]
 
 **Follow up:**
 
-Could you optimize your algorithm to use only _O_(_k_) extra space?
+Could you optimize your algorithm to use only *O(k)* extra space?
 
 
 #### Solution

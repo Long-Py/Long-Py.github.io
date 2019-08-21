@@ -13,7 +13,7 @@ Difficulty: **Easy**
 
 Topics: **Array**
 
-Given a non-negative integer _numRows_, generate the first _numRows_ of Pascal's triangle.
+Given a non-negative integer *numRows*, generate the first *numRow* of Pascal's triangle.
 
 **Example:**
 
