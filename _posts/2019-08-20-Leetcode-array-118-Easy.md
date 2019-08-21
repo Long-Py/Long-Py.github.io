@@ -7,7 +7,7 @@ categories: Leetcode
 tags: Leetcode Array
 ---
 
-### [118\. Pascal\'s Triangle](https://leetcode.com/problems/pascals-triangle/)
+### [118\. Pascal Triangle](https://leetcode.com/problems/pascals-triangle/)
 
 Difficulty: **Easy**
 
