@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>709. To Lower Case - Long's Blog</title>
+    <title>521. Longest Uncommon Subsequence I - Long's Blog</title>
     <meta name="author"  content="Long Zhao">
-    <meta name="description" content="709. To Lower Case">
+    <meta name="description" content="521. Longest Uncommon Subsequence I">
     <meta name="keywords"  content="Leetcode, Strings">
     <!-- Open Graph -->
-    <meta property="og:title" content="709. To Lower Case - Long's Blog">
+    <meta property="og:title" content="521. Longest Uncommon Subsequence I - Long's Blog">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/2019/08/08/Leetcode-str-709-Easy.html">
+    <meta property="og:url" content="http://localhost:4000/2019/08/14/Leetcode-str-521-Easy.html">
     <meta property="og:description" content="">
     <meta property="og:site_name" content="Long's Blog">
     <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
@@ -122,10 +122,10 @@ Author: Ray-Eldath
           
         
       </div>
-      <h1>709. To Lower Case</h1>
+      <h1>521. Longest Uncommon Subsequence I</h1>
       <div class="post-meta">
         <span class="post-meta-item"><i class="iconfont icon-author"></i>Long Zhao</span>
-        <time class="post-meta-item" datetime="19-08-08"><i class="iconfont icon-date"></i>08 Aug 2019</time>
+        <time class="post-meta-item" datetime="19-08-14"><i class="iconfont icon-date"></i>14 Aug 2019</time>
       </div>
     </div>
     
@@ -137,53 +137,54 @@ Author: Ray-Eldath
     
 
     <article class="markdown-body">
-      <h3 id="709-to-lower-case"><a href="https://leetcode.com/problems/to-lower-case/">709. To Lower Case</a></h3>
+      <h3 id="521-longest-uncommon-subsequence-i"><a href="https://leetcode.com/problems/longest-uncommon-subsequence-i/">521. Longest Uncommon Subsequence I</a></h3>
 
 <p>Difficulty: <strong>Easy</strong></p>
 
-<p>Topics: <strong>String</strong></p>
+<p>Topics: <strong>Strings</strong></p>
 
-<p>Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.</p>
+<p>Given a group of two strings, you need to find the longest uncommon subsequence of this group of two strings. The longest uncommon subsequence is defined as the longest subsequence of one of these strings and this subsequence should not be <strong>any</strong> subsequence of the other strings.</p>
+
+<p>A <strong>subsequence</strong> is a sequence that can be derived from one sequence by deleting some characters without changing the order of the remaining elements. Trivially, any string is a subsequence of itself and an empty string is a subsequence of any string.</p>
+
+<p>The input will be two strings, and the output needs to be the length of the longest uncommon subsequence. If the longest uncommon subsequence doesn’t exist, return -1.</p>
 
 <p><strong>Example 1:</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "Hello"
-Output: "hello"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "aba", "cdc"
+Output: 3
+Explanation: The longest uncommon subsequence is "aba" (or "cdc"), because "aba" is a subsequence of "aba", but not a subsequence of any other strings in the group of two strings. 
 </code></pre></div></div>
 
-<p><strong>Example 2:</strong></p>
+<p><strong>Note:</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "here"
-Output: "here"
-</code></pre></div></div>
-
-<p><strong>Example 3:</strong></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "LOVELY"
-Output: "lovely"
-</code></pre></div></div>
+<ol>
+  <li>Both strings’ lengths will not exceed 100.</li>
+  <li>Only letters from a ~ z will appear in input strings.</li>
+</ol>
 
 <h4 id="solution">Solution</h4>
 
 <p>Language: <strong>Python</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
- <span class="err"> </span> <span class="err"> </span><span class="k">def</span> <span class="nf">toLowerCase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+ <span class="err"> </span> <span class="err"> </span><span class="k">def</span> <span class="nf">findLUSlength</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
  <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="s">"""
-        :type str: str
-        :rtype: str
+        :type a: str
+        :type b: str
+        :rtype: int
         """</span>
- <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">return</span> <span class="s">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32</span><span class="p">)</span> <span class="k">if</span> <span class="mi">65</span> <span class="o">&lt;=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">90</span> <span class="k">else</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">)</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
 </code></pre></div></div>
-
 <h4 id="notes">Notes</h4>
 <ul>
-  <li>Using <code class="highlighter-rouge">str.lower()</code> function is not good idea in an interview.</li>
-  <li>Uppercase letters’ ASCII code are from <strong>65</strong> ~ <strong>90</strong>;
- Lowercase letters’ ASCII code are from <strong>97</strong> ~ <strong>122</strong>;
- The difference is <strong>32</strong>.</li>
-  <li>The <code class="highlighter-rouge">ord()</code> method returns an integer representing Unicode code point for the given Unicode character.</li>
-  <li>The <code class="highlighter-rouge">chr()</code> method returns a character (a string) from an integer (represents unicode code point of the character).</li>
+  <li>This question is asking us to return the <strong>longest</strong> uncommon subsequance. There are only 2 scenarios:
+    <ol>
+      <li>a == b: return -1, as mentioned</li>
+      <li>a != b: return the longer str, because we just need find the <strong>longest</strong> uncommon subsequence, don’t over-thinking!!!</li>
+    </ol>
+  </li>
 </ul>
 
     </article>
@@ -215,15 +216,24 @@ Output: "lovely"
     <section class="post-footer-item read-next">
       
       <div class="read-next-item">
-        <a href="/2019/08/09/Leetcode-array-561-Easy.html" class="read-next-link"></a>
+        <a href="/2019/08/14/Leetcode-str-824-Easy.html" class="read-next-link"></a>
         <section>
-          <span>561. Array Partition I</span>
-          <p>561. Array Partition I</p>
+          <span>824. Goat Latin</span>
+          <p>824. Goat Latin</p>
         </section>
         
      </div>
       
 
+      
+      <div class="read-next-item">
+        <a href="/2019/08/14/Leetcode-array-937-Easy.html" class="read-next-link"></a>
+          <section>
+            <span>937. Reorder Log Files</span>
+            <p>937. Reorder Log Files</p>
+          </section>
+          
+      </div>
       
     </section>
     

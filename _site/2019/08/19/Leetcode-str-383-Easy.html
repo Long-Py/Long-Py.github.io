@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>709. To Lower Case - Long's Blog</title>
+    <title>383. Ransom Note - Long's Blog</title>
     <meta name="author"  content="Long Zhao">
-    <meta name="description" content="709. To Lower Case">
+    <meta name="description" content="383. Ransom Note">
     <meta name="keywords"  content="Leetcode, Strings">
     <!-- Open Graph -->
-    <meta property="og:title" content="709. To Lower Case - Long's Blog">
+    <meta property="og:title" content="383. Ransom Note - Long's Blog">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/2019/08/08/Leetcode-str-709-Easy.html">
+    <meta property="og:url" content="http://localhost:4000/2019/08/19/Leetcode-str-383-Easy.html">
     <meta property="og:description" content="">
     <meta property="og:site_name" content="Long's Blog">
     <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
@@ -122,10 +122,10 @@ Author: Ray-Eldath
           
         
       </div>
-      <h1>709. To Lower Case</h1>
+      <h1>383. Ransom Note</h1>
       <div class="post-meta">
         <span class="post-meta-item"><i class="iconfont icon-author"></i>Long Zhao</span>
-        <time class="post-meta-item" datetime="19-08-08"><i class="iconfont icon-date"></i>08 Aug 2019</time>
+        <time class="post-meta-item" datetime="19-08-19"><i class="iconfont icon-date"></i>19 Aug 2019</time>
       </div>
     </div>
     
@@ -137,30 +137,22 @@ Author: Ray-Eldath
     
 
     <article class="markdown-body">
-      <h3 id="709-to-lower-case"><a href="https://leetcode.com/problems/to-lower-case/">709. To Lower Case</a></h3>
+      <h3 id="383-ransom-note"><a href="https://leetcode.com/problems/ransom-note/">383. Ransom Note</a></h3>
 
 <p>Difficulty: <strong>Easy</strong></p>
 
-<p>Topics: <strong>String</strong></p>
+<p>Topics: <strong>Strings</strong></p>
 
-<p>Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.</p>
+<p>Given an arbitrary ransom note string and another string containing letters from all the magazines, write a function that will return true if the ransom note can be constructed from the magazines ; otherwise, it will return false.</p>
 
-<p><strong>Example 1:</strong></p>
+<p>Each letter in the magazine string can only be used once in your ransom note.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "Hello"
-Output: "hello"
-</code></pre></div></div>
+<p><strong>Note:</strong><br />
+You may assume that both strings contain only <strong>lowercase</strong> letters.</p>
 
-<p><strong>Example 2:</strong></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "here"
-Output: "here"
-</code></pre></div></div>
-
-<p><strong>Example 3:</strong></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "LOVELY"
-Output: "lovely"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>canConstruct("a", "b") -&gt; false
+canConstruct("aa", "ab") -&gt; false
+canConstruct("aa", "aab") -&gt; true
 </code></pre></div></div>
 
 <h4 id="solution">Solution</h4>
@@ -168,22 +160,32 @@ Output: "lovely"
 <p>Language: <strong>Python</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
- <span class="err"> </span> <span class="err"> </span><span class="k">def</span> <span class="nf">toLowerCase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+ <span class="err"> </span> <span class="err"> </span><span class="k">def</span> <span class="nf">canConstruct</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ransomNote</span><span class="p">,</span> <span class="n">magazine</span><span class="p">):</span>
  <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="s">"""
-        :type str: str
-        :rtype: str
+        :type ransomNote: str
+        :type magazine: str
+        :rtype: bool
         """</span>
- <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">return</span> <span class="s">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32</span><span class="p">)</span> <span class="k">if</span> <span class="mi">65</span> <span class="o">&lt;=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">90</span> <span class="k">else</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">)</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">cnt</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">26</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">magazine</span><span class="p">:</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">cnt</span><span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">-</span><span class="nb">ord</span><span class="p">(</span><span class="s">'a'</span><span class="p">)]</span> <span class="o">+=</span> <span class="mi">1</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">ransomNote</span><span class="p">:</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">cnt</span><span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">-</span><span class="nb">ord</span><span class="p">(</span><span class="s">'a'</span><span class="p">)]</span> <span class="o">-=</span> <span class="mi">1</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">if</span> <span class="n">cnt</span><span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">-</span><span class="nb">ord</span><span class="p">(</span><span class="s">'a'</span><span class="p">)]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">return</span> <span class="bp">False</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">return</span> <span class="bp">True</span>
 </code></pre></div></div>
 
 <h4 id="notes">Notes</h4>
 <ul>
-  <li>Using <code class="highlighter-rouge">str.lower()</code> function is not good idea in an interview.</li>
-  <li>Uppercase letters’ ASCII code are from <strong>65</strong> ~ <strong>90</strong>;
- Lowercase letters’ ASCII code are from <strong>97</strong> ~ <strong>122</strong>;
- The difference is <strong>32</strong>.</li>
-  <li>The <code class="highlighter-rouge">ord()</code> method returns an integer representing Unicode code point for the given Unicode character.</li>
-  <li>The <code class="highlighter-rouge">chr()</code> method returns a character (a string) from an integer (represents unicode code point of the character).</li>
+  <li>two passes
+    <ul>
+      <li>1st pass: create a list of 26 letters with counts by magazine list</li>
+      <li>2nd pass: subtract count of letters in ransomNote, when we get a negative count we return False.</li>
+    </ul>
+  </li>
+  <li>time complexity: O(n), space complexity: O(1)</li>
 </ul>
 
     </article>
@@ -215,15 +217,24 @@ Output: "lovely"
     <section class="post-footer-item read-next">
       
       <div class="read-next-item">
-        <a href="/2019/08/09/Leetcode-array-561-Easy.html" class="read-next-link"></a>
+        <a href="/2019/08/19/Leetcode-str-387-Easy.html" class="read-next-link"></a>
         <section>
-          <span>561. Array Partition I</span>
-          <p>561. Array Partition I</p>
+          <span>387. First Unique Character in a String</span>
+          <p>387. First Unique Character in a String</p>
         </section>
         
      </div>
       
 
+      
+      <div class="read-next-item">
+        <a href="/2019/08/19/Leetcode-array-717-Easy.html" class="read-next-link"></a>
+          <section>
+            <span>717. 1-bit and 2-bit Characters</span>
+            <p>717. 1-bit and 2-bit Characters</p>
+          </section>
+          
+      </div>
       
     </section>
     

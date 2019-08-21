@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>709. To Lower Case - Long's Blog</title>
+    <title>1051. Height Checker - Long's Blog</title>
     <meta name="author"  content="Long Zhao">
-    <meta name="description" content="709. To Lower Case">
-    <meta name="keywords"  content="Leetcode, Strings">
+    <meta name="description" content="1051. Height Checker">
+    <meta name="keywords"  content="Leetcode, Array">
     <!-- Open Graph -->
-    <meta property="og:title" content="709. To Lower Case - Long's Blog">
+    <meta property="og:title" content="1051. Height Checker - Long's Blog">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/2019/08/08/Leetcode-str-709-Easy.html">
+    <meta property="og:url" content="http://localhost:4000/2019/08/12/Leetcode-array-1051-Easy.html">
     <meta property="og:description" content="">
     <meta property="og:site_name" content="Long's Blog">
     <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
@@ -118,14 +118,14 @@ Author: Ray-Eldath
           
             <a href="/tags.html#Leetcode" class="post-tag">Leetcode</a>
           
-            <a href="/tags.html#Strings" class="post-tag">Strings</a>
+            <a href="/tags.html#Array" class="post-tag">Array</a>
           
         
       </div>
-      <h1>709. To Lower Case</h1>
+      <h1>1051. Height Checker</h1>
       <div class="post-meta">
         <span class="post-meta-item"><i class="iconfont icon-author"></i>Long Zhao</span>
-        <time class="post-meta-item" datetime="19-08-08"><i class="iconfont icon-date"></i>08 Aug 2019</time>
+        <time class="post-meta-item" datetime="19-08-12"><i class="iconfont icon-date"></i>12 Aug 2019</time>
       </div>
     </div>
     
@@ -137,53 +137,55 @@ Author: Ray-Eldath
     
 
     <article class="markdown-body">
-      <h3 id="709-to-lower-case"><a href="https://leetcode.com/problems/to-lower-case/">709. To Lower Case</a></h3>
+      <h3 id="1051-height-checker"><a href="https://leetcode.com/problems/height-checker/">1051. Height Checker</a></h3>
 
 <p>Difficulty: <strong>Easy</strong></p>
 
-<p>Topics: <strong>String</strong></p>
+<p>Topics: <strong>Array</strong></p>
 
-<p>Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.</p>
+<p>Students are asked to stand in non-decreasing order of heights for an annual photo.</p>
+
+<p>Return the minimum number of students not standing in the right positions.  (This is the number of students that must move in order for all students to be standing in non-decreasing order of height.)</p>
 
 <p><strong>Example 1:</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "Hello"
-Output: "hello"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [1,1,4,2,1,3]
+Output: 3
+Explanation: 
+Students with heights 4, 3 and the last 1 are not standing in the right positions.
 </code></pre></div></div>
 
-<p><strong>Example 2:</strong></p>
+<p><strong>Note:</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "here"
-Output: "here"
-</code></pre></div></div>
-
-<p><strong>Example 3:</strong></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "LOVELY"
-Output: "lovely"
-</code></pre></div></div>
+<ol>
+  <li><code class="highlighter-rouge">1 &lt;= heights.length &lt;= 100</code></li>
+  <li><code class="highlighter-rouge">1 &lt;= heights[i] &lt;= 100</code></li>
+</ol>
 
 <h4 id="solution">Solution</h4>
 
 <p>Language: <strong>Python</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
- <span class="err"> </span> <span class="err"> </span><span class="k">def</span> <span class="nf">toLowerCase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+ <span class="err"> </span> <span class="err"> </span><span class="k">def</span> <span class="nf">heightChecker</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">heights</span><span class="p">):</span>
  <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="s">"""
-        :type str: str
-        :rtype: str
+        :type heights: List[int]
+        :rtype: int
         """</span>
- <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">return</span> <span class="s">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32</span><span class="p">)</span> <span class="k">if</span> <span class="mi">65</span> <span class="o">&lt;=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">90</span> <span class="k">else</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">)</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">h1</span> <span class="o">!=</span> <span class="n">h2</span> <span class="k">for</span> <span class="n">h1</span><span class="p">,</span> <span class="n">h2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">heights</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">heights</span><span class="p">)))</span>
 </code></pre></div></div>
 
 <h4 id="notes">Notes</h4>
 <ul>
-  <li>Using <code class="highlighter-rouge">str.lower()</code> function is not good idea in an interview.</li>
-  <li>Uppercase letters’ ASCII code are from <strong>65</strong> ~ <strong>90</strong>;
- Lowercase letters’ ASCII code are from <strong>97</strong> ~ <strong>122</strong>;
- The difference is <strong>32</strong>.</li>
-  <li>The <code class="highlighter-rouge">ord()</code> method returns an integer representing Unicode code point for the given Unicode character.</li>
-  <li>The <code class="highlighter-rouge">chr()</code> method returns a character (a string) from an integer (represents unicode code point of the character).</li>
+  <li><strong>hint</strong>: Build the correct order of heights by sorting another array, then compare the two arrays.</li>
+  <li>The <code class="highlighter-rouge">zip()</code> function returns a zip object, which is an iterator of <strong>tuples</strong> where the first item in each passed iterator is paired together, and then the second item in each passed iterator are paired together etc.
+If the passed iterators have different lengths, the iterator with <strong>the least</strong> items decides the length of the new iterator.</li>
+  <li>
+    <p>The <code class="highlighter-rouge">sorted()</code> function returns a sorted list of the specified iterable object.
+You can specify ascending or descending order. Strings are sorted alphabetically, and numbers are sorted numerically.</p>
+
+    <p><code class="highlighter-rouge">sorted(iterable, key=func, reverse=reverse)</code></p>
+  </li>
 </ul>
 
     </article>
@@ -215,15 +217,24 @@ Output: "lovely"
     <section class="post-footer-item read-next">
       
       <div class="read-next-item">
-        <a href="/2019/08/09/Leetcode-array-561-Easy.html" class="read-next-link"></a>
+        <a href="/2019/08/12/Leetcode-array-1122-Easy.html" class="read-next-link"></a>
         <section>
-          <span>561. Array Partition I</span>
-          <p>561. Array Partition I</p>
+          <span>1122. Relative Sort Array</span>
+          <p>1122. Relative Sort Array</p>
         </section>
         
      </div>
       
 
+      
+      <div class="read-next-item">
+        <a href="/2019/08/09/Leetcode-str-804-easy.html" class="read-next-link"></a>
+          <section>
+            <span>804. Unique Morse Code Words</span>
+            <p>804. Unique Morse Code Words</p>
+          </section>
+          
+      </div>
       
     </section>
     

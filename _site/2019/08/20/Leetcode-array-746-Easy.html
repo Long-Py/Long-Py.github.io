@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>709. To Lower Case - Long's Blog</title>
+    <title>746. Min Cost Climbing Stairs - Long's Blog</title>
     <meta name="author"  content="Long Zhao">
-    <meta name="description" content="709. To Lower Case">
-    <meta name="keywords"  content="Leetcode, Strings">
+    <meta name="description" content="746. Min Cost Climbing Stairs">
+    <meta name="keywords"  content="Leetcode, Array">
     <!-- Open Graph -->
-    <meta property="og:title" content="709. To Lower Case - Long's Blog">
+    <meta property="og:title" content="746. Min Cost Climbing Stairs - Long's Blog">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/2019/08/08/Leetcode-str-709-Easy.html">
+    <meta property="og:url" content="http://localhost:4000/2019/08/20/Leetcode-array-746-Easy.html">
     <meta property="og:description" content="">
     <meta property="og:site_name" content="Long's Blog">
     <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
@@ -118,14 +118,14 @@ Author: Ray-Eldath
           
             <a href="/tags.html#Leetcode" class="post-tag">Leetcode</a>
           
-            <a href="/tags.html#Strings" class="post-tag">Strings</a>
+            <a href="/tags.html#Array" class="post-tag">Array</a>
           
         
       </div>
-      <h1>709. To Lower Case</h1>
+      <h1>746. Min Cost Climbing Stairs</h1>
       <div class="post-meta">
         <span class="post-meta-item"><i class="iconfont icon-author"></i>Long Zhao</span>
-        <time class="post-meta-item" datetime="19-08-08"><i class="iconfont icon-date"></i>08 Aug 2019</time>
+        <time class="post-meta-item" datetime="19-08-20"><i class="iconfont icon-date"></i>20 Aug 2019</time>
       </div>
     </div>
     
@@ -137,53 +137,58 @@ Author: Ray-Eldath
     
 
     <article class="markdown-body">
-      <h3 id="709-to-lower-case"><a href="https://leetcode.com/problems/to-lower-case/">709. To Lower Case</a></h3>
+      <h3 id="746-min-cost-climbing-stairs"><a href="https://leetcode.com/problems/min-cost-climbing-stairs/">746. Min Cost Climbing Stairs</a></h3>
 
 <p>Difficulty: <strong>Easy</strong></p>
 
-<p>Topics: <strong>String</strong></p>
+<p>Topics: <strong>Array</strong></p>
 
-<p>Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.</p>
+<p>On a staircase, the <code class="highlighter-rouge">i</code>-th step has some non-negative cost <code class="highlighter-rouge">cost[i]</code> assigned (0 indexed).</p>
+
+<p>Once you pay the cost, you can either climb one or two steps. You need to find minimum cost to reach the top of the floor, and you can either start from the step with index 0, or the step with index 1.</p>
 
 <p><strong>Example 1:</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "Hello"
-Output: "hello"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: cost = [10, 15, 20]
+Output: 15
+Explanation: Cheapest is start on cost[1], pay that cost and go to the top.
 </code></pre></div></div>
 
 <p><strong>Example 2:</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "here"
-Output: "here"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: cost = [1, 100, 1, 1, 1, 100, 1, 1, 100, 1]
+Output: 6
+Explanation: Cheapest is start on cost[0], and only step on 1s, skipping cost[3].
 </code></pre></div></div>
 
-<p><strong>Example 3:</strong></p>
+<p><strong>Note:</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "LOVELY"
-Output: "lovely"
-</code></pre></div></div>
+<ol>
+  <li><code class="highlighter-rouge">cost</code> will have a length in the range <code class="highlighter-rouge">[2, 1000]</code>.</li>
+  <li>Every <code class="highlighter-rouge">cost[i]</code> will be an integer in the range <code class="highlighter-rouge">[0, 999]</code>.</li>
+</ol>
 
 <h4 id="solution">Solution</h4>
 
 <p>Language: <strong>Python</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
- <span class="err"> </span> <span class="err"> </span><span class="k">def</span> <span class="nf">toLowerCase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+ <span class="err"> </span> <span class="err"> </span><span class="k">def</span> <span class="nf">minCostClimbingStairs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cost</span><span class="p">):</span>
  <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="s">"""
-        :type str: str
-        :rtype: str
+        :type cost: List[int]
+        :rtype: int
         """</span>
- <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">return</span> <span class="s">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32</span><span class="p">)</span> <span class="k">if</span> <span class="mi">65</span> <span class="o">&lt;=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">90</span> <span class="k">else</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">)</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">min1</span><span class="p">,</span> <span class="n">min2</span> <span class="o">=</span> <span class="n">cost</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cost</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">cost</span><span class="p">)):</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">min1</span><span class="p">,</span> <span class="n">min2</span> <span class="o">=</span> <span class="n">min2</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">min1</span><span class="p">,</span><span class="n">min2</span><span class="p">)</span><span class="o">+</span><span class="n">cost</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">min1</span><span class="p">,</span><span class="n">min2</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h4 id="notes">Notes</h4>
 <ul>
-  <li>Using <code class="highlighter-rouge">str.lower()</code> function is not good idea in an interview.</li>
-  <li>Uppercase letters’ ASCII code are from <strong>65</strong> ~ <strong>90</strong>;
- Lowercase letters’ ASCII code are from <strong>97</strong> ~ <strong>122</strong>;
- The difference is <strong>32</strong>.</li>
-  <li>The <code class="highlighter-rouge">ord()</code> method returns an integer representing Unicode code point for the given Unicode character.</li>
-  <li>The <code class="highlighter-rouge">chr()</code> method returns a character (a string) from an integer (represents unicode code point of the character).</li>
+  <li>DP: <code class="highlighter-rouge">f[i] = cost[i] + min(f[i+1], f[i+2])</code></li>
 </ul>
 
     </article>
@@ -215,15 +220,24 @@ Output: "lovely"
     <section class="post-footer-item read-next">
       
       <div class="read-next-item">
-        <a href="/2019/08/09/Leetcode-array-561-Easy.html" class="read-next-link"></a>
+        <a href="/2019/08/20/Leetcode-array-830-Easy.html" class="read-next-link"></a>
         <section>
-          <span>561. Array Partition I</span>
-          <p>561. Array Partition I</p>
+          <span>830. Positions of Large Groups</span>
+          <p>830. Positions of Large Groups</p>
         </section>
         
      </div>
       
 
+      
+      <div class="read-next-item">
+        <a href="/2019/08/20/Leetcode-array-628-Easy.html" class="read-next-link"></a>
+          <section>
+            <span>628. Maximum Product of Three Numbers</span>
+            <p>628. Maximum Product of Three Numbers</p>
+          </section>
+          
+      </div>
       
     </section>
     

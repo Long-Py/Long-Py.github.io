@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>709. To Lower Case - Long's Blog</title>
+    <title>867. Transpose Matrix - Long's Blog</title>
     <meta name="author"  content="Long Zhao">
-    <meta name="description" content="709. To Lower Case">
-    <meta name="keywords"  content="Leetcode, Strings">
+    <meta name="description" content="867. Transpose Matrix">
+    <meta name="keywords"  content="Leetcode, Array">
     <!-- Open Graph -->
-    <meta property="og:title" content="709. To Lower Case - Long's Blog">
+    <meta property="og:title" content="867. Transpose Matrix - Long's Blog">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/2019/08/08/Leetcode-str-709-Easy.html">
+    <meta property="og:url" content="http://localhost:4000/2019/08/13/Leetcode-array-867-Easy.html">
     <meta property="og:description" content="">
     <meta property="og:site_name" content="Long's Blog">
     <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
@@ -118,14 +118,14 @@ Author: Ray-Eldath
           
             <a href="/tags.html#Leetcode" class="post-tag">Leetcode</a>
           
-            <a href="/tags.html#Strings" class="post-tag">Strings</a>
+            <a href="/tags.html#Array" class="post-tag">Array</a>
           
         
       </div>
-      <h1>709. To Lower Case</h1>
+      <h1>867. Transpose Matrix</h1>
       <div class="post-meta">
         <span class="post-meta-item"><i class="iconfont icon-author"></i>Long Zhao</span>
-        <time class="post-meta-item" datetime="19-08-08"><i class="iconfont icon-date"></i>08 Aug 2019</time>
+        <time class="post-meta-item" datetime="19-08-13"><i class="iconfont icon-date"></i>13 Aug 2019</time>
       </div>
     </div>
     
@@ -137,53 +137,56 @@ Author: Ray-Eldath
     
 
     <article class="markdown-body">
-      <h3 id="709-to-lower-case"><a href="https://leetcode.com/problems/to-lower-case/">709. To Lower Case</a></h3>
+      <h3 id="867-transpose-matrix"><a href="https://leetcode.com/problems/transpose-matrix/">867. Transpose Matrix</a></h3>
 
 <p>Difficulty: <strong>Easy</strong></p>
 
-<p>Topics: <strong>String</strong></p>
+<p>Topics: <strong>Array</strong></p>
 
-<p>Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.</p>
+<p>Given a matrix <code class="highlighter-rouge">A</code>, return the transpose of <code class="highlighter-rouge">A</code>.</p>
+
+<p>The transpose of a matrix is the matrix flipped over it’s main diagonal, switching the row and column indices of the matrix.</p>
 
 <p><strong>Example 1:</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "Hello"
-Output: "hello"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [[1,2,3],[4,5,6],[7,8,9]]
+Output: [[1,4,7],[2,5,8],[3,6,9]]
 </code></pre></div></div>
 
 <p><strong>Example 2:</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "here"
-Output: "here"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [[1,2,3],[4,5,6]]
+Output: [[1,4],[2,5],[3,6]]
 </code></pre></div></div>
 
-<p><strong>Example 3:</strong></p>
+<p><span style="display: inline;"><strong>Note:</strong></span></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: "LOVELY"
-Output: "lovely"
-</code></pre></div></div>
+<ol>
+  <li><code class="highlighter-rouge">&lt;span style="display: inline;"&gt;1 &lt;= A.length &lt;= 1000&lt;/span&gt;</code></li>
+  <li><code class="highlighter-rouge">&lt;span style="display: inline;"&gt;1 &lt;= A[0].length &lt;= 1000&lt;/span&gt;</code></li>
+</ol>
 
 <h4 id="solution">Solution</h4>
 
 <p>Language: <strong>Python</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
- <span class="err"> </span> <span class="err"> </span><span class="k">def</span> <span class="nf">toLowerCase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+ <span class="err"> </span> <span class="err"> </span><span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
  <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="s">"""
-        :type str: str
-        :rtype: str
+        :type A: List[List[int]]
+        :rtype: List[List[int]]
         """</span>
- <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">return</span> <span class="s">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32</span><span class="p">)</span> <span class="k">if</span> <span class="mi">65</span> <span class="o">&lt;=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">90</span> <span class="k">else</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">)</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">A</span><span class="p">))</span>
 </code></pre></div></div>
 
 <h4 id="notes">Notes</h4>
 <ul>
-  <li>Using <code class="highlighter-rouge">str.lower()</code> function is not good idea in an interview.</li>
-  <li>Uppercase letters’ ASCII code are from <strong>65</strong> ~ <strong>90</strong>;
- Lowercase letters’ ASCII code are from <strong>97</strong> ~ <strong>122</strong>;
- The difference is <strong>32</strong>.</li>
-  <li>The <code class="highlighter-rouge">ord()</code> method returns an integer representing Unicode code point for the given Unicode character.</li>
-  <li>The <code class="highlighter-rouge">chr()</code> method returns a character (a string) from an integer (represents unicode code point of the character).</li>
+  <li><code class="highlighter-rouge">*A</code> : <strong>asterisk</strong> here is used for <strong>unpacking</strong> the containers(usually list, tuple, dict, etc.) and return a <strong>zip</strong> datatype.</li>
+  <li>
+    <p>You can also use a nest <em>for loop</em> to swap value.</p>
+
+    <p><code class="highlighter-rouge">A[r][c] = A[c][r]</code></p>
+  </li>
 </ul>
 
     </article>
@@ -215,15 +218,24 @@ Output: "lovely"
     <section class="post-footer-item read-next">
       
       <div class="read-next-item">
-        <a href="/2019/08/09/Leetcode-array-561-Easy.html" class="read-next-link"></a>
+        <a href="/2019/08/13/Leetcode-array-893-Easy.html" class="read-next-link"></a>
         <section>
-          <span>561. Array Partition I</span>
-          <p>561. Array Partition I</p>
+          <span>893. Groups of Special-Equivalent Strings</span>
+          <p>893. Groups of Special-Equivalent Strings</p>
         </section>
         
      </div>
       
 
+      
+      <div class="read-next-item">
+        <a href="/2019/08/13/Leetcode-array-766-Easy.html" class="read-next-link"></a>
+          <section>
+            <span>766. Toeplitz Matrix</span>
+            <p>766. Toeplitz Matrix</p>
+          </section>
+          
+      </div>
       
     </section>
     
