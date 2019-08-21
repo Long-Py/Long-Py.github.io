@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1018. Binary Prefix Divisible By 5 - Long's Blog</title>
+    <title>1128. Number of Equivalent Domino Pairs - Long's Blog</title>
     <meta name="author"  content="Long Zhao">
-    <meta name="description" content="1018. Binary Prefix Divisible By 5">
+    <meta name="description" content="1128. Number of Equivalent Domino Pairs">
     <meta name="keywords"  content="Leetcode, Array">
     <!-- Open Graph -->
-    <meta property="og:title" content="1018. Binary Prefix Divisible By 5 - Long's Blog">
+    <meta property="og:title" content="1128. Number of Equivalent Domino Pairs - Long's Blog">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/2019/08/20/Leetcode-array-1018-Easy.html">
+    <meta property="og:url" content="http://localhost:4000/2019/08/21/Leetcode-array-1128-Easy.html">
     <meta property="og:description" content="">
     <meta property="og:site_name" content="Long's Blog">
     <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
@@ -122,10 +122,10 @@ Author: Ray-Eldath
           
         
       </div>
-      <h1>1018. Binary Prefix Divisible By 5</h1>
+      <h1>1128. Number of Equivalent Domino Pairs</h1>
       <div class="post-meta">
         <span class="post-meta-item"><i class="iconfont icon-author"></i>Long Zhao</span>
-        <time class="post-meta-item" datetime="19-08-20"><i class="iconfont icon-date"></i>20 Aug 2019</time>
+        <time class="post-meta-item" datetime="19-08-21"><i class="iconfont icon-date"></i>21 Aug 2019</time>
       </div>
     </div>
     
@@ -137,70 +137,52 @@ Author: Ray-Eldath
     
 
     <article class="markdown-body">
-      <h3 id="1018-binary-prefix-divisible-by-5"><a href="https://leetcode.com/problems/binary-prefix-divisible-by-5/">1018. Binary Prefix Divisible By 5</a></h3>
+      <h3 id="1128-number-of-equivalent-domino-pairs"><a href="https://leetcode.com/problems/number-of-equivalent-domino-pairs/">1128. Number of Equivalent Domino Pairs</a></h3>
 
 <p>Difficulty: <strong>Easy</strong></p>
 
 <p>Topics: <strong>Array</strong></p>
 
-<p>Given an array <code class="highlighter-rouge">A</code> of <code class="highlighter-rouge">0</code>s and <code class="highlighter-rouge">1</code>s, consider <code class="highlighter-rouge">N_i</code>: the i-th subarray from <code class="highlighter-rouge">A[0]</code> to <code class="highlighter-rouge">A[i]</code> interpreted as a binary number (from most-significant-bit to least-significant-bit.)</p>
+<p>Given a list of <code class="highlighter-rouge">dominoes</code>, <code class="highlighter-rouge">dominoes[i] = [a, b]</code> is <em>equivalent</em> to <code class="highlighter-rouge">dominoes[j] = [c, d]</code> if and only if either (<code class="highlighter-rouge">a==c</code> and <code class="highlighter-rouge">b==d</code>), or (<code class="highlighter-rouge">a==d</code> and <code class="highlighter-rouge">b==c</code>) - that is, one domino can be rotated to be equal to another domino.</p>
 
-<p>Return a list of booleans <code class="highlighter-rouge">answer</code>, where <code class="highlighter-rouge">answer[i]</code> is <code class="highlighter-rouge">true</code> if and only if <code class="highlighter-rouge">N_i</code> is divisible by 5.</p>
+<p>Return the number of pairs <code class="highlighter-rouge">(i, j)</code> for which <code class="highlighter-rouge">0 &lt;= i &lt; j &lt; dominoes.length</code>, and <code class="highlighter-rouge">dominoes[i]</code> is equivalent to <code class="highlighter-rouge">dominoes[j]</code>.</p>
 
 <p><strong>Example 1:</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [0,1,1]
-Output: [true,false,false]
-Explanation: 
-The input numbers in binary are 0, 01, 011; which are 0, 1, and 3 in base-10\.  Only the first number is divisible by 5, so answer[0] is true.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: dominoes = [[1,2],[2,1],[3,4],[5,6]]
+Output: 1
 </code></pre></div></div>
 
-<p><strong>Example 2:</strong></p>
+<p><strong>Constraints:</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [1,1,1]
-Output: [false,false,false]
-</code></pre></div></div>
-
-<p><strong>Example 3:</strong></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [0,1,1,1,1,1]
-Output: [true,false,false,false,true,false]
-</code></pre></div></div>
-
-<p><strong>Example 4:</strong></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [1,1,1,0,1]
-Output: [false,false,false,false,false]
-</code></pre></div></div>
-
-<p><strong>Note:</strong></p>
-
-<ol>
-  <li><code class="highlighter-rouge">1 &lt;= A.length &lt;= 30000</code></li>
-  <li><code class="highlighter-rouge">A[i]</code> is <code class="highlighter-rouge">0</code> or <code class="highlighter-rouge">1</code></li>
-</ol>
+<ul>
+  <li><code class="highlighter-rouge">1 &lt;= dominoes.length &lt;= 40000</code></li>
+  <li><code class="highlighter-rouge">1 &lt;= dominoes[i][j] &lt;= 9</code></li>
+</ul>
 
 <h4 id="solution">Solution</h4>
 
 <p>Language: <strong>Python</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
- <span class="err"> </span> <span class="err"> </span><span class="k">def</span> <span class="nf">prefixesDivBy5</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
+ <span class="err"> </span> <span class="err"> </span><span class="k">def</span> <span class="nf">numEquivDominoPairs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dominoes</span><span class="p">):</span>
  <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="s">"""
-        :type A: List[int]
-        :rtype: List[bool]
+        :type dominoes: List[List[int]]
+        :rtype: int
         """</span>
- <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">d</span> <span class="o">=</span> <span class="mi">0</span>
- <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
- <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">A</span><span class="p">:</span>
- <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">d</span> <span class="o">=</span> <span class="n">d</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="n">n</span>
- <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="o">%</span><span class="mi">5</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
- <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">return</span> <span class="n">ans</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="n">dominoes</span><span class="p">:</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">:</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">d</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)]</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">else</span><span class="p">:</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">d</span><span class="p">[(</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 </code></pre></div></div>
 
 <h4 id="notes">Notes</h4>
 <ul>
-  <li>If X is the first i digits of the array as a binary number, then 2X + A[i] is the first i+1 digits. Just like bit manipulation <code class="highlighter-rouge">i &lt;&lt; 1</code>.</li>
+  <li>count sorted pairs and put into dict</li>
 </ul>
 
     </article>
@@ -232,10 +214,10 @@ Output: [false,false,false,false,false]
     <section class="post-footer-item read-next">
       
       <div class="read-next-item">
-        <a href="/2019/08/20/Leetcode-array-118-Easy.html" class="read-next-link"></a>
+        <a href="/2019/08/21/Leetcode-array-119-Easy.html" class="read-next-link"></a>
         <section>
-          <span>118. Pascal Triangle</span>
-          <p>118. Pascal's Triangle</p>
+          <span>119. Pascal Triangle II</span>
+          <p>119. Pascal's Triangle II</p>
         </section>
         
      </div>
@@ -243,10 +225,10 @@ Output: [false,false,false,false,false]
 
       
       <div class="read-next-item">
-        <a href="/2019/08/20/Leetcode-array-1010-Easy.html" class="read-next-link"></a>
+        <a href="/2019/08/20/Leetcode-str-551-Easy.html" class="read-next-link"></a>
           <section>
-            <span>1010. Pairs of Songs With Total Durations Divisible by 60</span>
-            <p>1010. Pairs of Songs With Total Durations Divisible by 60</p>
+            <span>551. Student Attendance Record I</span>
+            <p>551. Student Attendance Record I</p>
           </section>
           
       </div>

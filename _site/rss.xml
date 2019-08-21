@@ -5,13 +5,75 @@
     <description></description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 21 Aug 2019 10:06:49 -0500</pubDate>
-    <lastBuildDate>Wed, 21 Aug 2019 10:06:49 -0500</lastBuildDate>
+    <pubDate>Wed, 21 Aug 2019 11:41:24 -0500</pubDate>
+    <lastBuildDate>Wed, 21 Aug 2019 11:41:24 -0500</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
-        <title></title>
-        <description>&lt;h3 id=&quot;119-pascals-triangle-ii&quot;&gt;&lt;a href=&quot;https://leetcode.com/problems/pascals-triangle-ii/&quot;&gt;119. Pascal’s Triangle II&lt;/a&gt;&lt;/h3&gt;
+        <title>674. Longest Continuous Increasing Subsequence</title>
+        <description>&lt;h3 id=&quot;674-longest-continuous-increasing-subsequence&quot;&gt;&lt;a href=&quot;https://leetcode.com/problems/longest-continuous-increasing-subsequence/&quot;&gt;674. Longest Continuous Increasing Subsequence&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Difficulty: &lt;strong&gt;Easy&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Topics: &lt;strong&gt;Array&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Given an unsorted array of integers, find the length of longest &lt;code class=&quot;highlighter-rouge&quot;&gt;continuous&lt;/code&gt; increasing subsequence (subarray).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [1,3,5,4,7]
+Output: 3
+Explanation: The longest continuous increasing subsequence is [1,3,5], its length is 3\. 
+Even though [1,3,5,7] is also an increasing subsequence, it's not a continuous one where 5 and 7 are separated by 4\. 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Example 2:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [2,2,2,2,2]
+Output: 1
+Explanation: The longest continuous increasing subsequence is [2], its length is 1\. 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Length of the array will not exceed 10,000.&lt;/p&gt;
+
+&lt;h4 id=&quot;solution&quot;&gt;Solution&lt;/h4&gt;
+
+&lt;p&gt;Language: &lt;strong&gt;Python&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findLengthOfLCIS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+        :type nums: List[int]
+        :rtype: int
+        &quot;&quot;&quot;&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Wed, 21 Aug 2019 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2019/08/21/Leetcode-array-674-Easy.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/08/21/Leetcode-array-674-Easy.html</guid>
+        
+        <category>Leetcode</category>
+        
+        <category>Array</category>
+        
+        
+        <category>Leetcode</category>
+        
+      </item>
+    
+      <item>
+        <title>119. Pascal Triangle II</title>
+        <description>&lt;h3 id=&quot;119-pascals-triangle-ii&quot;&gt;&lt;a href=&quot;https://leetcode.com/problems/pascals-triangle-ii/&quot;&gt;119. Pascal's Triangle II&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;Difficulty: &lt;strong&gt;Easy&lt;/strong&gt;&lt;/p&gt;
 
@@ -20,6 +82,9 @@
 &lt;p&gt;Given a non-negative index &lt;em&gt;k&lt;/em&gt; where &lt;em&gt;k&lt;/em&gt; ≤ 33, return the &lt;em&gt;k&lt;/em&gt;&lt;sup&gt;th&lt;/sup&gt; index row of the Pascal’s triangle.&lt;/p&gt;
 
 &lt;p&gt;Note that the row index starts from 0.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif&quot; alt=&quot;&quot; /&gt;&lt;br /&gt;
+&lt;small style=&quot;display: inline;&quot;&gt;In Pascal’s triangle, each number is the sum of the two numbers directly above it.&lt;/small&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
 
@@ -54,66 +119,79 @@ Output: [1,3,3,1]
   &lt;li&gt;imporve from &lt;em&gt;Pascal’s Triangle I&lt;/em&gt;, but for this problem, only track the result of prev line.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Wed, 21 Aug 2019 10:06:49 -0500</pubDate>
-        <link>http://localhost:4000/2019/08/21/2019-08-21-Leetcode-array-119-Easy.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/08/21/2019-08-21-Leetcode-array-119-Easy.html</guid>
+        <pubDate>Wed, 21 Aug 2019 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2019/08/21/Leetcode-array-119-Easy.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/08/21/Leetcode-array-119-Easy.html</guid>
         
+        <category>Leetcode</category>
+        
+        <category>Array</category>
+        
+        
+        <category>Leetcode</category>
         
       </item>
     
       <item>
-        <title></title>
-        <description>&lt;h3 id=&quot;118-pascals-triangle&quot;&gt;&lt;a href=&quot;https://leetcode.com/problems/pascals-triangle/&quot;&gt;118. Pascal’s Triangle&lt;/a&gt;&lt;/h3&gt;
+        <title>1128. Number of Equivalent Domino Pairs</title>
+        <description>&lt;h3 id=&quot;1128-number-of-equivalent-domino-pairs&quot;&gt;&lt;a href=&quot;https://leetcode.com/problems/number-of-equivalent-domino-pairs/&quot;&gt;1128. Number of Equivalent Domino Pairs&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;Difficulty: &lt;strong&gt;Easy&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Topics: &lt;strong&gt;Array&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Given a non-negative integer &lt;em&gt;numRows&lt;/em&gt;, generate the first &lt;em&gt;numRows&lt;/em&gt; of Pascal’s triangle.&lt;/p&gt;
+&lt;p&gt;Given a list of &lt;code class=&quot;highlighter-rouge&quot;&gt;dominoes&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;dominoes[i] = [a, b]&lt;/code&gt; is &lt;em&gt;equivalent&lt;/em&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;dominoes[j] = [c, d]&lt;/code&gt; if and only if either (&lt;code class=&quot;highlighter-rouge&quot;&gt;a==c&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;b==d&lt;/code&gt;), or (&lt;code class=&quot;highlighter-rouge&quot;&gt;a==d&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;b==c&lt;/code&gt;) - that is, one domino can be rotated to be equal to another domino.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Return the number of pairs &lt;code class=&quot;highlighter-rouge&quot;&gt;(i, j)&lt;/code&gt; for which &lt;code class=&quot;highlighter-rouge&quot;&gt;0 &amp;lt;= i &amp;lt; j &amp;lt; dominoes.length&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;dominoes[i]&lt;/code&gt; is equivalent to &lt;code class=&quot;highlighter-rouge&quot;&gt;dominoes[j]&lt;/code&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: 5
-Output:
-[
-     [1],
-    [1,1],
-   [1,2,1],
-  [1,3,3,1],
- [1,4,6,4,1]
-]
+&lt;p&gt;&lt;strong&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: dominoes = [[1,2],[2,1],[3,4],[5,6]]
+Output: 1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Constraints:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1 &amp;lt;= dominoes.length &amp;lt;= 40000&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1 &amp;lt;= dominoes[i][j] &amp;lt;= 9&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h4 id=&quot;solution&quot;&gt;Solution&lt;/h4&gt;
 
 &lt;p&gt;Language: &lt;strong&gt;Python&lt;/strong&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;generate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numRows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;numEquivDominoPairs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dominoes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
  &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-        :type numRows: int
-        :rtype: List[List[int]]
+        :type dominoes: List[List[int]]
+        :rtype: int
         &quot;&quot;&quot;&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numRows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numRows&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numRows&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numRows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dominoes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;
+ &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;h4 id=&quot;notes&quot;&gt;Notes&lt;/h4&gt;
 &lt;ul&gt;
-  &lt;li&gt;notice: &lt;code class=&quot;highlighter-rouge&quot;&gt;range(2,numRows)&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;cur = [1]*(i+1)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;count sorted pairs and put into dict&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Wed, 21 Aug 2019 10:06:49 -0500</pubDate>
-        <link>http://localhost:4000/2019/08/21/2019-08-20-Leetcode-array-118-Easy.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/08/21/2019-08-20-Leetcode-array-118-Easy.html</guid>
+        <pubDate>Wed, 21 Aug 2019 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2019/08/21/Leetcode-array-1128-Easy.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/08/21/Leetcode-array-1128-Easy.html</guid>
         
+        <category>Leetcode</category>
+        
+        <category>Array</category>
+        
+        
+        <category>Leetcode</category>
         
       </item>
     
@@ -604,87 +682,6 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
         <pubDate>Tue, 20 Aug 2019 00:00:00 -0500</pubDate>
         <link>http://localhost:4000/2019/08/20/Leetcode-array-121-Easy.html</link>
         <guid isPermaLink="true">http://localhost:4000/2019/08/20/Leetcode-array-121-Easy.html</guid>
-        
-        <category>Leetcode</category>
-        
-        <category>Array</category>
-        
-        
-        <category>Leetcode</category>
-        
-      </item>
-    
-      <item>
-        <title>1018. Binary Prefix Divisible By 5</title>
-        <description>&lt;h3 id=&quot;1018-binary-prefix-divisible-by-5&quot;&gt;&lt;a href=&quot;https://leetcode.com/problems/binary-prefix-divisible-by-5/&quot;&gt;1018. Binary Prefix Divisible By 5&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;Difficulty: &lt;strong&gt;Easy&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Topics: &lt;strong&gt;Array&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Given an array &lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt; of &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;s and &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;s, consider &lt;code class=&quot;highlighter-rouge&quot;&gt;N_i&lt;/code&gt;: the i-th subarray from &lt;code class=&quot;highlighter-rouge&quot;&gt;A[0]&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;A[i]&lt;/code&gt; interpreted as a binary number (from most-significant-bit to least-significant-bit.)&lt;/p&gt;
-
-&lt;p&gt;Return a list of booleans &lt;code class=&quot;highlighter-rouge&quot;&gt;answer&lt;/code&gt;, where &lt;code class=&quot;highlighter-rouge&quot;&gt;answer[i]&lt;/code&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; if and only if &lt;code class=&quot;highlighter-rouge&quot;&gt;N_i&lt;/code&gt; is divisible by 5.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [0,1,1]
-Output: [true,false,false]
-Explanation: 
-The input numbers in binary are 0, 01, 011; which are 0, 1, and 3 in base-10\.  Only the first number is divisible by 5, so answer[0] is true.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Example 2:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [1,1,1]
-Output: [false,false,false]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Example 3:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [0,1,1,1,1,1]
-Output: [true,false,false,false,true,false]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Example 4:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: [1,1,1,0,1]
-Output: [false,false,false,false,false]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1 &amp;lt;= A.length &amp;lt;= 30000&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A[i]&lt;/code&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;solution&quot;&gt;Solution&lt;/h4&gt;
-
-&lt;p&gt;Language: &lt;strong&gt;Python&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Solution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;prefixesDivBy5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-        :type A: List[int]
-        :rtype: List[bool]
-        &quot;&quot;&quot;&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt; &lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;notes&quot;&gt;Notes&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;If X is the first i digits of the array as a binary number, then 2X + A[i] is the first i+1 digits. Just like bit manipulation &lt;code class=&quot;highlighter-rouge&quot;&gt;i &amp;lt;&amp;lt; 1&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 20 Aug 2019 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/2019/08/20/Leetcode-array-1018-Easy.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/08/20/Leetcode-array-1018-Easy.html</guid>
         
         <category>Leetcode</category>
         

@@ -1,20 +1,24 @@
 ---
 layout: post
-title: '119. Pascal's Triangle II'
+title: '119. Pascal Triangle II'
 subtitle: ''
 date: 2019-08-21
 categories: Leetcode
 tags: Leetcode Array
 ---
-### [119\. Pascal's Triangle II](https://leetcode.com/problems/pascals-triangle-ii/)
+
+### [119\. Pascal\'s Triangle II](https://leetcode.com/problems/pascals-triangle-ii/)
 
 Difficulty: **Easy**
 
 Topics: **Array**
 
-Given a non-negative index _k_ where _k_ ≤ 33, return the *k-th* index row of the Pascal's triangle.
+Given a non-negative index _k_ where _k_ ≤ 33, return the _k_<sup>th</sup> index row of the Pascal's triangle.
 
 Note that the row index starts from 0.
+
+![](https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif)  
+<small style="display: inline;">In Pascal's triangle, each number is the sum of the two numbers directly above it.</small>
 
 **Example:**
 
@@ -25,7 +29,7 @@ Output: [1,3,3,1]
 
 **Follow up:**
 
-Could you optimize your algorithm to use only *O(k)* extra space?
+Could you optimize your algorithm to use only _O_(_k_) extra space?
 
 
 #### Solution

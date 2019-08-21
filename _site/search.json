@@ -1,15 +1,21 @@
 [
   
     {
-      "title"    : "",
-      "tags"     : "",
-      "url"      : "/2019/08/21/2019-08-21-Leetcode-array-119-Easy.html"
+      "title"    : "674. Longest Continuous Increasing Subsequence",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/21/Leetcode-array-674-Easy.html"
     } ,
   
     {
-      "title"    : "",
-      "tags"     : "",
-      "url"      : "/2019/08/21/2019-08-20-Leetcode-array-118-Easy.html"
+      "title"    : "119. Pascal Triangle II",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/21/Leetcode-array-119-Easy.html"
+    } ,
+  
+    {
+      "title"    : "1128. Number of Equivalent Domino Pairs",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/21/Leetcode-array-1128-Easy.html"
     } ,
   
     {
@@ -52,6 +58,12 @@
       "title"    : "121. Best Time to Buy and Sell Stock",
       "tags"     : "Leetcode Array",
       "url"      : "/2019/08/20/Leetcode-array-121-Easy.html"
+    } ,
+  
+    {
+      "title"    : "118. Pascal Triangle",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/20/Leetcode-array-118-Easy.html"
     } ,
   
     {

@@ -1,19 +1,23 @@
 ---
 layout: post
-title: '118. Pascal's Triangle'
+title: '118. Pascal Triangle'
 subtitle: ''
 date: 2019-08-20
 categories: Leetcode
 tags: Leetcode Array
 ---
 
-### [118\. Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/)
+### [118\. Pascal\'s Triangle](https://leetcode.com/problems/pascals-triangle/)
 
 Difficulty: **Easy**
 
 Topics: **Array**
 
-Given a non-negative integer *numRows*, generate the first *numRow* of Pascal's triangle.
+
+Given a non-negative integer _numRows_, generate the first _numRows_ of Pascal's triangle.
+
+![](https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif)  
+<small style="display: inline;">In Pascal's triangle, each number is the sum of the two numbers directly above it.</small>
 
 **Example:**
 

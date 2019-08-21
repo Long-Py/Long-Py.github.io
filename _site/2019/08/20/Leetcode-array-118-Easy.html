@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1018. Binary Prefix Divisible By 5 - Long's Blog</title>
+    <title>118. Pascal Triangle - Long's Blog</title>
     <meta name="author"  content="Long Zhao">
-    <meta name="description" content="1018. Binary Prefix Divisible By 5">
+    <meta name="description" content="118. Pascal Triangle">
     <meta name="keywords"  content="Leetcode, Array">
     <!-- Open Graph -->
-    <meta property="og:title" content="1018. Binary Prefix Divisible By 5 - Long's Blog">
+    <meta property="og:title" content="118. Pascal Triangle - Long's Blog">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/2019/08/20/Leetcode-array-1018-Easy.html">
+    <meta property="og:url" content="http://localhost:4000/2019/08/20/Leetcode-array-118-Easy.html">
     <meta property="og:description" content="">
     <meta property="og:site_name" content="Long's Blog">
     <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
@@ -122,7 +122,7 @@ Author: Ray-Eldath
           
         
       </div>
-      <h1>1018. Binary Prefix Divisible By 5</h1>
+      <h1>118. Pascal Triangle</h1>
       <div class="post-meta">
         <span class="post-meta-item"><i class="iconfont icon-author"></i>Long Zhao</span>
         <time class="post-meta-item" datetime="19-08-20"><i class="iconfont icon-date"></i>20 Aug 2019</time>
@@ -137,70 +137,54 @@ Author: Ray-Eldath
     
 
     <article class="markdown-body">
-      <h3 id="1018-binary-prefix-divisible-by-5"><a href="https://leetcode.com/problems/binary-prefix-divisible-by-5/">1018. Binary Prefix Divisible By 5</a></h3>
+      <h3 id="118-pascals-triangle"><a href="https://leetcode.com/problems/pascals-triangle/">118. Pascal's Triangle</a></h3>
 
 <p>Difficulty: <strong>Easy</strong></p>
 
 <p>Topics: <strong>Array</strong></p>
 
-<p>Given an array <code class="highlighter-rouge">A</code> of <code class="highlighter-rouge">0</code>s and <code class="highlighter-rouge">1</code>s, consider <code class="highlighter-rouge">N_i</code>: the i-th subarray from <code class="highlighter-rouge">A[0]</code> to <code class="highlighter-rouge">A[i]</code> interpreted as a binary number (from most-significant-bit to least-significant-bit.)</p>
+<p>Given a non-negative integer <em>numRows</em>, generate the first <em>numRows</em> of Pascal’s triangle.</p>
 
-<p>Return a list of booleans <code class="highlighter-rouge">answer</code>, where <code class="highlighter-rouge">answer[i]</code> is <code class="highlighter-rouge">true</code> if and only if <code class="highlighter-rouge">N_i</code> is divisible by 5.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif" alt="" /><br />
+<small style="display: inline;">In Pascal’s triangle, each number is the sum of the two numbers directly above it.</small></p>
 
-<p><strong>Example 1:</strong></p>
+<p><strong>Example:</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [0,1,1]
-Output: [true,false,false]
-Explanation: 
-The input numbers in binary are 0, 01, 011; which are 0, 1, and 3 in base-10\.  Only the first number is divisible by 5, so answer[0] is true.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: 5
+Output:
+[
+     [1],
+    [1,1],
+   [1,2,1],
+  [1,3,3,1],
+ [1,4,6,4,1]
+]
 </code></pre></div></div>
-
-<p><strong>Example 2:</strong></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [1,1,1]
-Output: [false,false,false]
-</code></pre></div></div>
-
-<p><strong>Example 3:</strong></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [0,1,1,1,1,1]
-Output: [true,false,false,false,true,false]
-</code></pre></div></div>
-
-<p><strong>Example 4:</strong></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: [1,1,1,0,1]
-Output: [false,false,false,false,false]
-</code></pre></div></div>
-
-<p><strong>Note:</strong></p>
-
-<ol>
-  <li><code class="highlighter-rouge">1 &lt;= A.length &lt;= 30000</code></li>
-  <li><code class="highlighter-rouge">A[i]</code> is <code class="highlighter-rouge">0</code> or <code class="highlighter-rouge">1</code></li>
-</ol>
 
 <h4 id="solution">Solution</h4>
 
 <p>Language: <strong>Python</strong></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
- <span class="err"> </span> <span class="err"> </span><span class="k">def</span> <span class="nf">prefixesDivBy5</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
+ <span class="err"> </span> <span class="err"> </span><span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numRows</span><span class="p">):</span>
  <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="s">"""
-        :type A: List[int]
-        :rtype: List[bool]
+        :type numRows: int
+        :rtype: List[List[int]]
         """</span>
- <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">d</span> <span class="o">=</span> <span class="mi">0</span>
- <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
- <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">A</span><span class="p">:</span>
- <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">d</span> <span class="o">=</span> <span class="n">d</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="n">n</span>
- <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="o">%</span><span class="mi">5</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">if</span> <span class="ow">not</span> <span class="n">numRows</span><span class="p">:</span> <span class="k">return</span> <span class="p">[]</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">if</span> <span class="n">numRows</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="p">[[</span><span class="mi">1</span><span class="p">]]</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">if</span> <span class="n">numRows</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="k">return</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">ans</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">numRows</span><span class="p">):</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">cur</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">cur</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span>
  <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">return</span> <span class="n">ans</span>
 </code></pre></div></div>
-
 <h4 id="notes">Notes</h4>
 <ul>
-  <li>If X is the first i digits of the array as a binary number, then 2X + A[i] is the first i+1 digits. Just like bit manipulation <code class="highlighter-rouge">i &lt;&lt; 1</code>.</li>
+  <li>notice: <code class="highlighter-rouge">range(2,numRows)</code> and <code class="highlighter-rouge">cur = [1]*(i+1)</code></li>
 </ul>
 
     </article>
@@ -232,10 +216,10 @@ Output: [false,false,false,false,false]
     <section class="post-footer-item read-next">
       
       <div class="read-next-item">
-        <a href="/2019/08/20/Leetcode-array-118-Easy.html" class="read-next-link"></a>
+        <a href="/2019/08/20/Leetcode-array-121-Easy.html" class="read-next-link"></a>
         <section>
-          <span>118. Pascal Triangle</span>
-          <p>118. Pascal's Triangle</p>
+          <span>121. Best Time to Buy and Sell Stock</span>
+          <p>121. Best Time to Buy and Sell Stock</p>
         </section>
         
      </div>
@@ -243,10 +227,10 @@ Output: [false,false,false,false,false]
 
       
       <div class="read-next-item">
-        <a href="/2019/08/20/Leetcode-array-1010-Easy.html" class="read-next-link"></a>
+        <a href="/2019/08/20/Leetcode-array-1018-Easy.html" class="read-next-link"></a>
           <section>
-            <span>1010. Pairs of Songs With Total Durations Divisible by 60</span>
-            <p>1010. Pairs of Songs With Total Durations Divisible by 60</p>
+            <span>1018. Binary Prefix Divisible By 5</span>
+            <p>1018. Binary Prefix Divisible By 5</p>
           </section>
           
       </div>
