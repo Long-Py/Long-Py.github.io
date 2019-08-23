@@ -5,7 +5,7 @@ subtitle: ''
 date: 2019-08-23
 categories: Leetcode
 tags: Leetcode Array
-------
+---
 ### [840\. Magic Squares In Grid](https://leetcode.com/problems/magic-squares-in-grid/)
 
 Difficulty: **Easy**
