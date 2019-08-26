@@ -4,7 +4,7 @@ title: '1002. Find Common Characters'
 subtitle: ''
 date: 2019-08-13
 categories: Leetcode
-tags: Leetcode Array
+tags: Leetcode Array HashTable
 ---
 ### [1002\. Find Common Characters](https://leetcode.com/problems/find-common-characters/)
 
