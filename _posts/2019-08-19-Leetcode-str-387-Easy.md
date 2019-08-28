@@ -4,7 +4,7 @@ title: '387. First Unique Character in a String'
 subtitle: ''
 date: 2019-08-19
 categories: Leetcode
-tags: Leetcode Strings
+tags: Leetcode Strings HashTable
 ---
 
 ### [387\. First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/)
