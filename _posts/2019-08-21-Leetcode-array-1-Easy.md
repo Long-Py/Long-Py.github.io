@@ -4,7 +4,7 @@ title: '1. Two Sum'
 subtitle: ''
 date: 2019-08-21
 categories: Leetcode
-tags: Leetcode Array
+tags: Leetcode Array HashTable
 ---
 ### [1\. Two Sum](https://leetcode.com/problems/two-sum/)
 
