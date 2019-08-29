@@ -4,7 +4,7 @@ title: '219. Contains Duplicate II'
 subtitle: ''
 date: 2019-08-23
 categories: Leetcode
-tags: Leetcode Array
+tags: Leetcode Array HashTable
 ---
 ### [219\. Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/)
 
