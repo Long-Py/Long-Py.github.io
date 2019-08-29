@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>350. Intersection of Two Arrays II - Long's Blog</title>
+    <meta name="author"  content="Long Zhao">
+    <meta name="description" content="350. Intersection of Two Arrays II">
+    <meta name="keywords"  content="Leetcode, Array, HashTable">
+    <!-- Open Graph -->
+    <meta property="og:title" content="350. Intersection of Two Arrays II - Long's Blog">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/2019/08/28/Leetcode-hash-350-Easy.html">
+    <meta property="og:description" content="">
+    <meta property="og:site_name" content="Long's Blog">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header
+    class="g-banner post-header post-pattern-circuitBoard bgcolor-default post-no-cover"
+    data-theme="default"
+  >
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="/tags.html#Leetcode" class="post-tag">Leetcode</a>
+          
+            <a href="/tags.html#Array" class="post-tag">Array</a>
+          
+            <a href="/tags.html#HashTable" class="post-tag">HashTable</a>
+          
+        
+      </div>
+      <h1>350. Intersection of Two Arrays II</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i>Long Zhao</span>
+        <time class="post-meta-item" datetime="19-08-28"><i class="iconfont icon-date"></i>28 Aug 2019</time>
+      </div>
+    </div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+    <h2 class="post-subtitle"></h2>
+    
+
+    <article class="markdown-body">
+      <h3 id="350-intersection-of-two-arrays-ii"><a href="https://leetcode.com/problems/intersection-of-two-arrays-ii/">350. Intersection of Two Arrays II</a></h3>
+
+<p>Difficulty: <strong>Easy</strong></p>
+
+<p>Topics: <strong>HashTable</strong></p>
+
+<p>Given two arrays, write a function to compute their intersection.</p>
+
+<p><strong>Example 1:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: nums1 = [1,2,2,1], nums2 = [2,2]
+Output: [2,2]
+</code></pre></div></div>
+
+<p><strong>Example 2:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+Output: [4,9]
+</code></pre></div></div>
+
+<p><strong>Note:</strong></p>
+
+<ul>
+  <li>Each element in the result should appear as many times as it shows in both arrays.</li>
+  <li>The result can be in any order.</li>
+</ul>
+
+<p><strong>Follow up:</strong></p>
+
+<ul>
+  <li>What if the given array is already sorted? How would you optimize your algorithm?</li>
+  <li>What if <em>nums1</em>’s size is small compared to <em>nums2</em>’s size? Which algorithm is better?</li>
+  <li>What if elements of <em>nums2</em> are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?</li>
+</ul>
+
+<h4 id="solution">Solution</h4>
+
+<p>Language: <strong>Python</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+ <span class="err"> </span> <span class="err"> </span><span class="k">def</span> <span class="nf">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums1</span><span class="p">,</span> <span class="n">nums2</span><span class="p">):</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="s">"""
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums1</span><span class="p">):</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">nums1</span><span class="p">,</span> <span class="n">nums2</span> <span class="o">=</span> <span class="n">nums2</span><span class="p">,</span> <span class="n">nums1</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">cnt</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">nums2</span><span class="p">)</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nums1</span><span class="p">:</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">if</span> <span class="n">cnt</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="n">cnt</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">return</span> <span class="n">ans</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span>
+</code></pre></div></div>
+
+    </article>
+
+    
+  </div>
+
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="/assets/img/profile.png" alt="">
+      </div>
+      <div class="author-name" rel="author">Long Zhao</div>
+      <div class="bio">
+        <p></p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//github.com/Long-Py" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/2019/08/28/Leetcode-hash-389-Easy.html" class="read-next-link"></a>
+        <section>
+          <span>389. Find the Difference</span>
+          <p>389. Find the Difference</p>
+        </section>
+        
+     </div>
+      
+
+      
+      <div class="read-next-item">
+        <a href="/2019/08/28/Leetcode-hash-242-Easy.html" class="read-next-link"></a>
+          <section>
+            <span>242. Valid Anagram</span>
+            <p>242. Valid Anagram</p>
+          </section>
+          
+      </div>
+      
+    </section>
+    
+  </section>
+
+  <footer class="g-footer">
+  <section>Long's Blog ©
+  
+  
+    2017
+    -
+  
+  2019
+  </section>
+  
+</footer>
+
+
+  
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>

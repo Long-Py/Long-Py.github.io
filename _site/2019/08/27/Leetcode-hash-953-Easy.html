@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>953. Verifying an Alien Dictionary - Long's Blog</title>
+    <meta name="author"  content="Long Zhao">
+    <meta name="description" content="953. Verifying an Alien Dictionary">
+    <meta name="keywords"  content="Leetcode, Array, HashTable">
+    <!-- Open Graph -->
+    <meta property="og:title" content="953. Verifying an Alien Dictionary - Long's Blog">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/2019/08/27/Leetcode-hash-953-Easy.html">
+    <meta property="og:description" content="">
+    <meta property="og:site_name" content="Long's Blog">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header
+    class="g-banner post-header post-pattern-circuitBoard bgcolor-default post-no-cover"
+    data-theme="default"
+  >
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="/tags.html#Leetcode" class="post-tag">Leetcode</a>
+          
+            <a href="/tags.html#Array" class="post-tag">Array</a>
+          
+            <a href="/tags.html#HashTable" class="post-tag">HashTable</a>
+          
+        
+      </div>
+      <h1>953. Verifying an Alien Dictionary</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i>Long Zhao</span>
+        <time class="post-meta-item" datetime="19-08-27"><i class="iconfont icon-date"></i>27 Aug 2019</time>
+      </div>
+    </div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+    <h2 class="post-subtitle"></h2>
+    
+
+    <article class="markdown-body">
+      <h3 id="953-verifying-an-alien-dictionary"><a href="https://leetcode.com/problems/verifying-an-alien-dictionary/">953. Verifying an Alien Dictionary</a></h3>
+
+<p>Difficulty: <strong>Easy</strong></p>
+
+<p>Topics: <strong>HashTable</strong></p>
+
+<p>In an alien language, surprisingly they also use english lowercase letters, but possibly in a different <code class="highlighter-rouge">order</code>. The <code class="highlighter-rouge">order</code> of the alphabet is some permutation of lowercase letters.</p>
+
+<p>Given a sequence of <code class="highlighter-rouge">words</code> written in the alien language, and the <code class="highlighter-rouge">order</code> of the alphabet, return <code class="highlighter-rouge">true</code> if and only if the given <code class="highlighter-rouge">words</code> are sorted lexicographicaly in this alien language.</p>
+
+<p><strong>Example 1:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: words = ["hello","leetcode"], order = "hlabcdefgijkmnopqrstuvwxyz"
+Output: true
+Explanation: As 'h' comes before 'l' in this language, then the sequence is sorted.
+</code></pre></div></div>
+
+<p><strong>Example 2:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: words = ["word","world","row"], order = "worldabcefghijkmnpqstuvxyz"
+Output: false
+Explanation: As 'd' comes after 'l' in this language, then words[0] &gt; words[1], hence the sequence is unsorted.
+</code></pre></div></div>
+
+<p><strong>Example 3:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Input: words = ["apple","app"], order = "abcdefghijklmnopqrstuvwxyz"
+Output: false
+Explanation: The first three characters "app" match, and the second string is shorter (in size.) According to lexicographical rules "apple" &gt; "app", because 'l' &gt; '∅', where '∅' is defined as the blank character which is less than any other character ().
+</code></pre></div></div>
+
+<p><strong>Note:</strong></p>
+
+<ol>
+  <li><code class="highlighter-rouge">1 &lt;= words.length &lt;= 100</code></li>
+  <li><code class="highlighter-rouge">1 &lt;= words[i].length &lt;= 20</code></li>
+  <li><code class="highlighter-rouge">order.length == 26</code></li>
+  <li>All characters in <code class="highlighter-rouge">words[i]</code> and <code class="highlighter-rouge">order</code> are english lowercase letters.</li>
+</ol>
+
+<h4 id="solution">Solution</h4>
+
+<p>Language: <strong>Python</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+ <span class="err"> </span> <span class="err"> </span><span class="k">def</span> <span class="nf">isAlienSorted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">words</span><span class="p">,</span> <span class="n">order</span><span class="p">):</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="s">"""
+        :type words: List[str]
+        :type order: str
+        :rtype: bool
+        """</span>
+<span class="err">​</span>
+ <span class="err"> </span> <span class="err"> </span> <span class="err"> </span> <span class="err"> </span><span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="nb">map</span><span class="p">(</span><span class="n">order</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">w</span><span class="p">))</span> <span class="o">==</span> <span class="n">words</span>
+</code></pre></div></div>
+
+<h4 id="notes">Notes</h4>
+<ul>
+  <li><code class="highlighter-rouge">map()</code> function returns a list of the results after applying the given function to each item of a given iterable (list, tuple etc.)</li>
+  <li>time complexity: O(nlogn * w)</li>
+</ul>
+
+    </article>
+
+    
+  </div>
+
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="/assets/img/profile.png" alt="">
+      </div>
+      <div class="author-name" rel="author">Long Zhao</div>
+      <div class="bio">
+        <p></p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//github.com/Long-Py" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/2019/08/28/Leetcode-hash-242-Easy.html" class="read-next-link"></a>
+        <section>
+          <span>242. Valid Anagram</span>
+          <p>242. Valid Anagram</p>
+        </section>
+        
+     </div>
+      
+
+      
+      <div class="read-next-item">
+        <a href="/2019/08/27/Leetcode-hash-706-Easy.html" class="read-next-link"></a>
+          <section>
+            <span>706. Design HashMap</span>
+            <p>706. Design HashMap</p>
+          </section>
+          
+      </div>
+      
+    </section>
+    
+  </section>
+
+  <footer class="g-footer">
+  <section>Long's Blog ©
+  
+  
+    2017
+    -
+  
+  2019
+  </section>
+  
+</footer>
+
+
+  
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>

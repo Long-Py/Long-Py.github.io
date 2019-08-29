@@ -1,9 +1,363 @@
 [
   
     {
+      "title"    : "748. Shortest Completing Word",
+      "tags"     : "Leetcode Array HashTable",
+      "url"      : "/2019/08/28/Leetcode-hash-748-Easy.html"
+    } ,
+  
+    {
+      "title"    : "705. Design HashSet",
+      "tags"     : "Leetcode Array HashTable",
+      "url"      : "/2019/08/28/Leetcode-hash-705-Easy.html"
+    } ,
+  
+    {
+      "title"    : "690. Employee Importance",
+      "tags"     : "Leetcode Array HashTable",
+      "url"      : "/2019/08/28/Leetcode-hash-690-Easy.html"
+    } ,
+  
+    {
+      "title"    : "447. Number of Boomerangs",
+      "tags"     : "Leetcode Array HashTable",
+      "url"      : "/2019/08/28/Leetcode-hash-447-Easy.html"
+    } ,
+  
+    {
+      "title"    : "409. Longest Palindrome",
+      "tags"     : "Leetcode Strings HashTable",
+      "url"      : "/2019/08/28/Leetcode-hash-409-Easy.html"
+    } ,
+  
+    {
+      "title"    : "389. Find the Difference",
+      "tags"     : "Leetcode Strings HashTable",
+      "url"      : "/2019/08/28/Leetcode-hash-389-Easy.html"
+    } ,
+  
+    {
+      "title"    : "350. Intersection of Two Arrays II",
+      "tags"     : "Leetcode Array HashTable",
+      "url"      : "/2019/08/28/Leetcode-hash-350-Easy.html"
+    } ,
+  
+    {
+      "title"    : "242. Valid Anagram",
+      "tags"     : "Leetcode Strings HashTable",
+      "url"      : "/2019/08/28/Leetcode-hash-242-Easy.html"
+    } ,
+  
+    {
+      "title"    : "953. Verifying an Alien Dictionary",
+      "tags"     : "Leetcode Array HashTable",
+      "url"      : "/2019/08/27/Leetcode-hash-953-Easy.html"
+    } ,
+  
+    {
+      "title"    : "706. Design HashMap",
+      "tags"     : "Leetcode Array HashTable",
+      "url"      : "/2019/08/27/Leetcode-hash-706-Easy.html"
+    } ,
+  
+    {
+      "title"    : "575. Distribute Candies",
+      "tags"     : "Leetcode Array HashTable",
+      "url"      : "/2019/08/27/Leetcode-hash-575-Easy.html"
+    } ,
+  
+    {
+      "title"    : "349. Intersection of Two Arrays",
+      "tags"     : "Leetcode Array HashTable",
+      "url"      : "/2019/08/27/Leetcode-hash-349-Easy.html"
+    } ,
+  
+    {
+      "title"    : "961. N-Repeated Element in Size 2N Array",
+      "tags"     : "Leetcode Strings HashTable",
+      "url"      : "/2019/08/26/Leetcode-hash-961-Easy.html"
+    } ,
+  
+    {
+      "title"    : "884. Uncommon Words from Two Sentences",
+      "tags"     : "Leetcode Array HashTable",
+      "url"      : "/2019/08/26/Leetcode-hash-884-Easy.html"
+    } ,
+  
+    {
+      "title"    : "811. Subdomain Visit Count",
+      "tags"     : "Leetcode Strings HashTable Array",
+      "url"      : "/2019/08/26/Leetcode-hash-811-Easy.html"
+    } ,
+  
+    {
+      "title"    : "771. Jewels and Stones",
+      "tags"     : "Leetcode Strings HashTable",
+      "url"      : "/2019/08/26/Leetcode-hash-771-Easy.html"
+    } ,
+  
+    {
+      "title"    : "500. Keyboard Row",
+      "tags"     : "Leetcode Strings HashTable",
+      "url"      : "/2019/08/26/Leetcode-hash-500-Easy.html"
+    } ,
+  
+    {
+      "title"    : "136. Single Number",
+      "tags"     : "Leetcode Array HashTable",
+      "url"      : "/2019/08/26/Leetcode-hash-136-Easy.html"
+    } ,
+  
+    {
+      "title"    : "1160. Find Words That Can Be Formed by Characters",
+      "tags"     : "Leetcode Strings HashTable",
+      "url"      : "/2019/08/26/Leetcode-hash-1160-Easy.html"
+    } ,
+  
+    {
+      "title"    : "1078. Occurrences After Bigram",
+      "tags"     : "Leetcode Strings HashTable",
+      "url"      : "/2019/08/26/Leetcode-hash-1078-Easy.html"
+    } ,
+  
+    {
+      "title"    : "665. Non-decreasing Array",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/26/Leetcode-array-665-Easy.html"
+    } ,
+  
+    {
+      "title"    : "463. Island Perimeter",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/26/Leetcode-array-463-Easy.html"
+    } ,
+  
+    {
+      "title"    : "859. Buddy Strings",
+      "tags"     : "Leetcode Strings",
+      "url"      : "/2019/08/25/Leetcode-str-859-Easy.html"
+    } ,
+  
+    {
+      "title"    : "686. Repeated String Match",
+      "tags"     : "Leetcode Strings",
+      "url"      : "/2019/08/25/Leetcode-str-686-Easy.html"
+    } ,
+  
+    {
+      "title"    : "125. Valid Palindrome",
+      "tags"     : "Leetcode Strings",
+      "url"      : "/2019/08/25/Leetcode-str-125-Easy.html"
+    } ,
+  
+    {
+      "title"    : "605. Can Place Flowers",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/25/Leetcode-array-605-Easy.html"
+    } ,
+  
+    {
+      "title"    : "581. Shortest Unsorted Continuous Subarray",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/25/Leetcode-array-581-Easy.html"
+    } ,
+  
+    {
+      "title"    : "532. K-diff Pairs in an Array",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/25/Leetcode-array-532-Easy.html"
+    } ,
+  
+    {
+      "title"    : "414. Third Maximum Number",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/25/Leetcode-array-414-Easy.html"
+    } ,
+  
+    {
+      "title"    : "189. Rotate Array",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/25/Leetcode-array-189-Easy.html"
+    } ,
+  
+    {
+      "title"    : "1169. Invalid Transactions",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/25/Leetcode-array-1169-Easy.html"
+    } ,
+  
+    {
+      "title"    : "58. Length of Last Word",
+      "tags"     : "Leetcode Strings",
+      "url"      : "/2019/08/24/Leetcode-str-58-Easy.html"
+    } ,
+  
+    {
+      "title"    : "28. Implement strStr()",
+      "tags"     : "Leetcode Strings",
+      "url"      : "/2019/08/24/Leetcode-str-28-Easy.html"
+    } ,
+  
+    {
+      "title"    : "680. Valid Palindrome II",
+      "tags"     : "Leetcode Strings",
+      "url"      : "/2019/08/23/Leetcode-str-680-Easy.html"
+    } ,
+  
+    {
+      "title"    : "434. Number of Segments in a String",
+      "tags"     : "Leetcode Strings",
+      "url"      : "/2019/08/23/Leetcode-str-434-Easy.html"
+    } ,
+  
+    {
+      "title"    : "20. Valid Parentheses",
+      "tags"     : "Leetcode Strings",
+      "url"      : "/2019/08/23/Leetcode-str-20-Easy.html"
+    } ,
+  
+    {
+      "title"    : "941. Valid Mountain Array",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/23/Leetcode-array-941-Easy.html"
+    } ,
+  
+    {
+      "title"    : "914. X of a Kind in a Deck of Cards",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/23/Leetcode-array-914-Easy.html"
+    } ,
+  
+    {
+      "title"    : "88. Merge Sorted Array",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/23/Leetcode-array-88-Easy.html"
+    } ,
+  
+    {
+      "title"    : "840. Magic Squares In Grid",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/23/Leetcode-array-840-Easy.html"
+    } ,
+  
+    {
+      "title"    : "443. String Compression",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/23/Leetcode-array-443-Easy.html"
+    } ,
+  
+    {
+      "title"    : "219. Contains Duplicate II",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/23/Leetcode-array-219-Easy.html"
+    } ,
+  
+    {
+      "title"    : "14. Longest Common Prefix",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/23/Leetcode-array-14-Easy.html"
+    } ,
+  
+    {
+      "title"    : "67. Add Binary",
+      "tags"     : "Leetcode Strings",
+      "url"      : "/2019/08/22/Leetcode-str-67-Easy.html"
+    } ,
+  
+    {
+      "title"    : "459. Repeated Substring Pattern",
+      "tags"     : "Leetcode Strings",
+      "url"      : "/2019/08/22/Leetcode-str-459-Easy.html"
+    } ,
+  
+    {
+      "title"    : "38. Count and Say",
+      "tags"     : "Leetcode Strings",
+      "url"      : "/2019/08/22/Leetcode-str-38-Easy.html"
+    } ,
+  
+    {
+      "title"    : "849. Maximize Distance to Closest Person",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/22/Leetcode-array-849-Easy.html"
+    } ,
+  
+    {
+      "title"    : "747. Largest Number At Least Twice of Others",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/22/Leetcode-array-747-Easy.html"
+    } ,
+  
+    {
+      "title"    : "643. Maximum Average Subarray I",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/22/Leetcode-array-643-Easy.html"
+    } ,
+  
+    {
+      "title"    : "35. Search Insert Position",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/22/Leetcode-array-35-Easy.html"
+    } ,
+  
+    {
+      "title"    : "925. Long Pressed Name",
+      "tags"     : "Leetcode Strings",
+      "url"      : "/2019/08/21/Leetcode-str-925-Easy.html"
+    } ,
+  
+    {
+      "title"    : "819. Most Common Word",
+      "tags"     : "Leetcode Strings",
+      "url"      : "/2019/08/21/Leetcode-str-819-Easy.html"
+    } ,
+  
+    {
+      "title"    : "415. Add Strings",
+      "tags"     : "Leetcode Strings",
+      "url"      : "/2019/08/21/Leetcode-str-415-Easy.html"
+    } ,
+  
+    {
+      "title"    : "345. Reverse Vowels of a String",
+      "tags"     : "Leetcode Strings",
+      "url"      : "/2019/08/21/Leetcode-str-345-Easy.html"
+    } ,
+  
+    {
+      "title"    : "989. Add to Array-Form of Integer",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/21/Leetcode-array-989-Easy.html"
+    } ,
+  
+    {
+      "title"    : "724. Find Pivot Index",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/21/Leetcode-array-724-Easy.html"
+    } ,
+  
+    {
       "title"    : "674. Longest Continuous Increasing Subsequence",
       "tags"     : "Leetcode Array",
       "url"      : "/2019/08/21/Leetcode-array-674-Easy.html"
+    } ,
+  
+    {
+      "title"    : "66. Plus One",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/21/Leetcode-array-66-Easy.html"
+    } ,
+  
+    {
+      "title"    : "53. Maximum Subarray",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/21/Leetcode-array-53-Easy.html"
+    } ,
+  
+    {
+      "title"    : "26. Remove Duplicates from Sorted Array",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/21/Leetcode-array-26-Easy.html"
     } ,
   
     {
@@ -16,6 +370,12 @@
       "title"    : "1128. Number of Equivalent Domino Pairs",
       "tags"     : "Leetcode Array",
       "url"      : "/2019/08/21/Leetcode-array-1128-Easy.html"
+    } ,
+  
+    {
+      "title"    : "1. Two Sum",
+      "tags"     : "Leetcode Array",
+      "url"      : "/2019/08/21/Leetcode-array-1-Easy.html"
     } ,
   
     {
@@ -80,7 +440,7 @@
   
     {
       "title"    : "387. First Unique Character in a String",
-      "tags"     : "Leetcode Strings",
+      "tags"     : "Leetcode Strings HashTable",
       "url"      : "/2019/08/19/Leetcode-str-387-Easy.html"
     } ,
   
@@ -152,7 +512,7 @@
   
     {
       "title"    : "217. Contains Duplicate",
-      "tags"     : "Leetcode Array",
+      "tags"     : "Leetcode Array HashTable",
       "url"      : "/2019/08/16/Leetcode-array-217-Easy.html"
     } ,
   
@@ -278,7 +638,7 @@
   
     {
       "title"    : "1002. Find Common Characters",
-      "tags"     : "Leetcode Array",
+      "tags"     : "Leetcode Array HashTable",
       "url"      : "/2019/08/13/Leetcode-array-1002-Easy.html"
     } ,
   
