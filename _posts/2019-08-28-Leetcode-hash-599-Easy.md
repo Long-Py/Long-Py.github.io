@@ -72,7 +72,6 @@ class Solution(object):
                 elif cur == idx:
                     ans.append(w)
         return ans
-                elif cur == idx:
 ```
 #### Notes
 - do not use `if w in list2:` directly, the time complexity would be O(n*m)
