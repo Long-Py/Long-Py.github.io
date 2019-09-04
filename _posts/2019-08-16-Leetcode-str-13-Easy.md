@@ -4,7 +4,7 @@ title: '13. Roman to Integer'
 subtitle: ''
 date: 2019-08-16
 categories: Leetcode
-tags: Leetcode Strings
+tags: Leetcode Strings Math
 ---
 ### [13\. Roman to Integer](https://leetcode.com/problems/roman-to-integer/)
 
