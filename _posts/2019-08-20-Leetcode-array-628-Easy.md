@@ -4,7 +4,7 @@ title: '628. Maximum Product of Three Numbers'
 subtitle: ''
 date: 2019-08-20
 categories: Leetcode
-tags: Leetcode Array
+tags: Leetcode Array Math
 ---
 ### [628\. Maximum Product of Three Numbers](https://leetcode.com/problems/maximum-product-of-three-numbers/)
 

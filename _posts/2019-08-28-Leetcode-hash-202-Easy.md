@@ -4,7 +4,7 @@ title: '202. Happy Number'
 subtitle: ''
 date: 2019-08-28
 categories: Leetcode
-tags: Leetcode Array HashTable
+tags: Leetcode Array HashTable Math
 ---
 ### [202\. Happy Number](https://leetcode.com/problems/happy-number/)
 
