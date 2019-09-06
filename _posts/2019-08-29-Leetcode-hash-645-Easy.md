@@ -4,7 +4,7 @@ title: '645. Set Mismatch'
 subtitle: ''
 date: 2019-08-29
 categories: Leetcode
-tags: Leetcode Array HashTable
+tags: Leetcode Array HashTable Math
 ---
 ### [645\. Set Mismatch](https://leetcode.com/problems/set-mismatch/)
 

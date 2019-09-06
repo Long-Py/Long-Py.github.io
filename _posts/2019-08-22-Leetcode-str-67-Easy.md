@@ -4,7 +4,7 @@ title: '67. Add Binary'
 subtitle: ''
 date: 2019-08-22
 categories: Leetcode
-tags: Leetcode Strings
+tags: Leetcode Strings Math
 ---
 ### [67\. Add Binary](https://leetcode.com/problems/add-binary/)
 

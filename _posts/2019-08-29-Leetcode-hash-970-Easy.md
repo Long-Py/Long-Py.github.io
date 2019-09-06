@@ -4,7 +4,7 @@ title: '970. Powerful Integers'
 subtitle: ''
 date: 2019-08-29
 categories: Leetcode
-tags: Leetcode HashTable
+tags: Leetcode HashTable Math
 ---
 ### [970\. Powerful Integers](https://leetcode.com/problems/powerful-integers/)
 
