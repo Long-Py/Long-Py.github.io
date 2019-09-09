@@ -4,7 +4,7 @@ title: '204. Count Primes'
 subtitle: ''
 date: 2019-08-29
 categories: Leetcode
-tags: Leetcode HashTable
+tags: Leetcode HashTable Math
 ---
 ### [204\. Count Primes](https://leetcode.com/problems/count-primes/)
 
