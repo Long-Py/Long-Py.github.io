@@ -4,7 +4,7 @@ title: '283. Move Zeroes'
 subtitle: ''
 date: 2019-08-15
 categories: Leetcode
-tags: Leetcode Array
+tags: Leetcode Array TwoPointers
 ---
 ### [283\. Move Zeroes](https://leetcode.com/problems/move-zeroes/)
 

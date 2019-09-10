@@ -4,7 +4,7 @@ title: '141. Linked List Cycle'
 subtitle: ''
 date: 2019-09-02
 categories: Leetcode
-tags: Leetcode LinkedList
+tags: Leetcode LinkedList TwoPointers
 ---
 ### [141\. Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)
 

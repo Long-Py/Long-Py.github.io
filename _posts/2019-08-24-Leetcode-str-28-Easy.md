@@ -4,7 +4,7 @@ title: '28. Implement strStr()'
 subtitle: ''
 date: 2019-08-24
 categories: Leetcode
-tags: Leetcode Strings
+tags: Leetcode Strings TwoPointers
 ---
 ### [28\. Implement strStr()](https://leetcode.com/problems/implement-strstr/)
 

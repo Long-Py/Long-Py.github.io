@@ -4,7 +4,7 @@ title: '125. Valid Palindrome'
 subtitle: ''
 date: 2019-08-25
 categories: Leetcode
-tags: Leetcode Strings
+tags: Leetcode Strings TwoPointers
 ---
 ### [125\. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
 

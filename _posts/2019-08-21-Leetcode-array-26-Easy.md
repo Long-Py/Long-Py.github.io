@@ -4,7 +4,7 @@ title: '26. Remove Duplicates from Sorted Array'
 subtitle: ''
 date: 2019-08-21
 categories: Leetcode
-tags: Leetcode Array
+tags: Leetcode Array TwoPointers
 ---
 ### [26\. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 

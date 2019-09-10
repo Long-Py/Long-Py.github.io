@@ -4,7 +4,7 @@ title: '88. Merge Sorted Array'
 subtitle: ''
 date: 2019-08-23
 categories: Leetcode
-tags: Leetcode Array
+tags: Leetcode Array TwoPointers
 ---
 ### [88\. Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
 

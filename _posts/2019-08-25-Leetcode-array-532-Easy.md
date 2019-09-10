@@ -4,7 +4,7 @@ title: '532. K-diff Pairs in an Array'
 subtitle: ''
 date: 2019-08-25
 categories: Leetcode
-tags: Leetcode Array
+tags: Leetcode Array TwoPointers
 ---
 
 ### [532\. K-diff Pairs in an Array](https://leetcode.com/problems/k-diff-pairs-in-an-array/)

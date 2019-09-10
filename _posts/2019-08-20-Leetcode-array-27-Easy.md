@@ -4,7 +4,7 @@ title: '27. Remove Element'
 subtitle: ''
 date: 2019-08-20
 categories: Leetcode
-tags: Leetcode Array
+tags: Leetcode Array TwoPointers
 ---
 ### [27\. Remove Element](https://leetcode.com/problems/remove-element/)
 

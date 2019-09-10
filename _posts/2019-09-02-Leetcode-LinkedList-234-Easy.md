@@ -4,7 +4,7 @@ title: '234. Palindrome Linked List'
 subtitle: ''
 date: 2019-09-02
 categories: Leetcode
-tags: Leetcode LinkedList
+tags: Leetcode LinkedList TwoPointers
 ---
 ### [234\. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)
 

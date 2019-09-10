@@ -4,7 +4,7 @@ title: '977. Squares of a Sorted Array'
 subtitle: ''
 date: 2019-08-09
 categories: Leetcode
-tags: Leetcode Array
+tags: Leetcode Array TwoPointers
 ---
 ### [977\. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
 

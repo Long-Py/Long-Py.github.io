@@ -4,7 +4,7 @@ title: '345. Reverse Vowels of a String'
 subtitle: ''
 date: 2019-08-21
 categories: Leetcode
-tags: Leetcode Strings
+tags: Leetcode Strings TwoPointers
 ---
 ### [345\. Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/)
 

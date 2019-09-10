@@ -4,7 +4,7 @@ title: '167. Two Sum II - Input array is sorted'
 subtitle: ''
 date: 2019-08-19
 categories: Leetcode
-tags: Leetcode Array
+tags: Leetcode Array TwoPointers
 ---
 
 ### [167\. Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
