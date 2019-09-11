@@ -4,7 +4,7 @@ title: '367. Valid Perfect Square'
 subtitle: ''
 date: 2019-09-06
 categories: Leetcode
-tags: Leetcode Math
+tags: Leetcode Math BinarySearch
 ---
 ### [367\. Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/)
 

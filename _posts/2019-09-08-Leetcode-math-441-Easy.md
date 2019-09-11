@@ -4,7 +4,7 @@ title: '441. Arranging Coins'
 subtitle: ''
 date: 2019-09-08
 categories: Leetcode
-tags: Leetcode Math
+tags: Leetcode Math BinarySearch
 ---
 ### [441\. Arranging Coins](https://leetcode.com/problems/arranging-coins/)
 

@@ -4,7 +4,7 @@ title: '69. Sqrt(x)'
 subtitle: ''
 date: 2019-09-09
 categories: Leetcode
-tags: Leetcode Math
+tags: Leetcode Math BinarySearch
 ---
 ### [69\. Sqrt(x)](https://leetcode.com/problems/sqrtx/)
 

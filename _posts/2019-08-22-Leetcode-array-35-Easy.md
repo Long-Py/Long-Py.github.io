@@ -4,7 +4,7 @@ title: '35. Search Insert Position'
 subtitle: ''
 date: 2019-08-22
 categories: Leetcode
-tags: Leetcode Array
+tags: Leetcode Array BinarySearch
 ---
 ### [35\. Search Insert Position](https://leetcode.com/problems/search-insert-position/)
 
