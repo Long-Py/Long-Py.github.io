@@ -4,7 +4,7 @@ title: '746. Min Cost Climbing Stairs'
 subtitle: ''
 date: 2019-08-20
 categories: Leetcode
-tags: Leetcode Array
+tags: Leetcode Array DP
 ---
 
 ### [746\. Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)

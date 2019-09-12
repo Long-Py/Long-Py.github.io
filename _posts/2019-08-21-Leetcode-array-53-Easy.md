@@ -4,7 +4,7 @@ title: '53. Maximum Subarray'
 subtitle: ''
 date: 2019-08-21
 categories: Leetcode
-tags: Leetcode Array
+tags: Leetcode Array Divide&Conquer DP
 ---
 ### [53\. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 

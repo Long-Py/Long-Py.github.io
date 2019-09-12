@@ -4,7 +4,7 @@ title: '121. Best Time to Buy and Sell Stock'
 subtitle: ''
 date: 2019-08-20
 categories: Leetcode
-tags: Leetcode Array
+tags: Leetcode Array DP
 ---
 ### [121\. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 
