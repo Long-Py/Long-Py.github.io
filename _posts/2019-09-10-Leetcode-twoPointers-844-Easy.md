@@ -4,7 +4,7 @@ title: '844. Backspace String Compare'
 subtitle: ''
 date: 2019-09-10
 categories: Leetcode
-tags: Leetcode TwoPointers
+tags: Leetcode TwoPointers Stack
 ---
 ### [844\. Backspace String Compare](https://leetcode.com/problems/backspace-string-compare/)
 
