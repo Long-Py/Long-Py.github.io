@@ -4,7 +4,7 @@ title: '1046. Last Stone Weight'
 subtitle: ''
 date: 2019-10-15
 categories: Leetcode
-tags: Leetcode Heap
+tags: Leetcode Heap Greedy
 ---
 ### [1046\. Last Stone Weight](https://leetcode.com/problems/last-stone-weight/)
 
