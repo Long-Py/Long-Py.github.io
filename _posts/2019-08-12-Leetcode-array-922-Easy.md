@@ -4,7 +4,7 @@ title: '922. Sort Array By Parity II'
 subtitle: ''
 date: 2019-08-12
 categories: Leetcode
-tags: Leetcode Array
+tags: Leetcode Array Sort
 ---
 ### [922\. Sort Array By Parity II](https://leetcode.com/problems/sort-array-by-parity-ii/)
 

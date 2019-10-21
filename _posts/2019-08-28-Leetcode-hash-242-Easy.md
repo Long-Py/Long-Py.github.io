@@ -4,7 +4,7 @@ title: '242. Valid Anagram'
 subtitle: ''
 date: 2019-08-28
 categories: Leetcode
-tags: Leetcode Strings HashTable
+tags: Leetcode Strings HashTable Sort
 ---
 ### [242\. Valid Anagram](https://leetcode.com/problems/valid-anagram/)
 

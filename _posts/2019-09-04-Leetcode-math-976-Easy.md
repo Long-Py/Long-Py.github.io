@@ -4,7 +4,7 @@ title: '976. Largest Perimeter Triangle'
 subtitle: ''
 date: 2019-09-03
 categories: Leetcode
-tags: Leetcode Math Array
+tags: Leetcode Math Array Sort
 ---
 ### [976\. Largest Perimeter Triangle](https://leetcode.com/problems/largest-perimeter-triangle/)
 

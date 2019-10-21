@@ -4,7 +4,7 @@ title: '1122. Relative Sort Array'
 subtitle: ''
 date: 2019-08-12
 categories: Leetcode
-tags: Leetcode Array
+tags: Leetcode Array Sort
 ---
 ### [1122\. Relative Sort Array](https://leetcode.com/problems/relative-sort-array/)
 

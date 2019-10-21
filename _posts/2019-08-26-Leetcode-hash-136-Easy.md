@@ -4,7 +4,7 @@ title: '136. Single Number'
 subtitle: ''
 date: 2019-08-26
 categories: Leetcode
-tags: Leetcode Array HashTable
+tags: Leetcode Array HashTable BitManipulation
 ---
 ### [136\. Single Number](https://leetcode.com/problems/single-number/)
 

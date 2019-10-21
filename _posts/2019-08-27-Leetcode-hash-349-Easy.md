@@ -4,7 +4,7 @@ title: '349. Intersection of Two Arrays'
 subtitle: ''
 date: 2019-08-27
 categories: Leetcode
-tags: Leetcode Array HashTable TwoPointers
+tags: Leetcode Array HashTable TwoPointers Sort
 ---
 ### [349\. Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/)
 
