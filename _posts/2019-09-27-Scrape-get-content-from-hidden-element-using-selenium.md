@@ -9,7 +9,7 @@ tags: Scrape Selenium
 ### Motivation
 Sometimes when we do web scraping, we find some contents are hidden which will be shown by click a button or title etc..
 
-In these cases, we have to use `selenium` to click the button to show the hidden texts. In some cases, however, we can use elements' `textContent`, `innerText`, or `innerHTML` to those texts easily.
+In these cases, we have to use `selenium` to click the button to show the hidden texts. In some cases, however, we can use elements' `textContent`, `innerText`, or `innerHTML` to get those contexts easily.
 
 - `innerHTML` will return the inner HTML of this element, which contains **all HTML tags** inside.
 

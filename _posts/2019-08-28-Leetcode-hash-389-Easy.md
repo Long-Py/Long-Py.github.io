@@ -4,7 +4,7 @@ title: '389. Find the Difference'
 subtitle: ''
 date: 2019-08-28
 categories: Leetcode
-tags: Leetcode Strings HashTable
+tags: Leetcode Strings HashTable BitManipulation
 ---
 ### [389\. Find the Difference](https://leetcode.com/problems/find-the-difference/)
 

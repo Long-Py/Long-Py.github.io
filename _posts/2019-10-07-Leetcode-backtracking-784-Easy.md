@@ -4,7 +4,7 @@ title: '784. Letter Case Permutation'
 subtitle: ''
 date: 2019-10-07
 categories: Leetcode
-tags: Leetcode Backtracking
+tags: Leetcode Backtracking BitManipulation
 ---
 ### [784\. Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/)
 

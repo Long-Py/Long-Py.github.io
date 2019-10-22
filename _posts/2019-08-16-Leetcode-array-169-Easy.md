@@ -4,7 +4,7 @@ title: '169. Majority Element'
 subtitle: ''
 date: 2019-08-16
 categories: Leetcode
-tags: Leetcode Array Divide&Conquer
+tags: Leetcode Array Divide&Conquer BitManipulation
 ---
 
 ### [169\. Majority Element](https://leetcode.com/problems/majority-element/)
