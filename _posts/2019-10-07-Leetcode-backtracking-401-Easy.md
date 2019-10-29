@@ -4,7 +4,7 @@ title: '401. Binary Watch'
 subtitle: ''
 date: 2019-10-07
 categories: Leetcode
-tags: Leetcode Backtracking
+tags: Leetcode Backtracking BitManipulation
 ---
 ### [401\. Binary Watch](https://leetcode.com/problems/binary-watch/)
 

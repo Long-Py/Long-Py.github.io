@@ -4,7 +4,7 @@ title: '231. Power of Two'
 subtitle: ''
 date: 2019-09-06
 categories: Leetcode
-tags: Leetcode Math
+tags: Leetcode Math BitManipulation
 ---
 ### [231\. Power of Two](https://leetcode.com/problems/power-of-two/)
 

@@ -4,7 +4,7 @@ title: '268. Missing Number'
 subtitle: ''
 date: 2019-08-19
 categories: Leetcode
-tags: Leetcode Array Math
+tags: Leetcode Array Math BitManipulation
 ---
 ### [268\. Missing Number](https://leetcode.com/problems/missing-number/)
 
